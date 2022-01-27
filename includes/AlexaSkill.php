@@ -1,7 +1,7 @@
 <?php
+include_once('includes/enums/AcceptHeader.php');
 include_once('includes/enums/RequestContentType.php');
 include_once('includes/enums/RequestMethod.php');
-include_once('includes/enums/AcceptHeader.php');
 include_once('includes/APICore.php');
 
 class AlexaSkill {
