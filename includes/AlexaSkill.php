@@ -1,7 +1,6 @@
 <?php
 include_once('includes/enums/RequestContentType.php');
 include_once('includes/enums/RequestMethod.php');
-include_once('includes/enums/ReturnType.php');
 include_once('includes/enums/AcceptHeader.php');
 include_once('includes/APICore.php');
 
@@ -45,41 +44,25 @@ class AlexaSkill {
                     die( $errorMessage );
             }
         }
-        if( $this->LitSettings->ReturnType !== null ) {
-            if( in_array( $this->LitSettings->ReturnType, $this->AllowedReturnTypes ) ) {
-                $this->APICore->setResponseContentType( $this->APICore->getAllowedAcceptHeaders()[ array_search( $this->LitSettings->ReturnType, $this->AllowedReturnTypes ) ] );
+        if( $this->APICore->hasAcceptHeader() ) {
+            if( $this->APICore->isAllowedAcceptHeader() ) {
+                $this->APICore->setResponseContentType( $this->APICore->getAcceptHeader() );
             } else {
-                header( $_SERVER[ "SERVER_PROTOCOL" ]." 406 Not Acceptable", true, 406 );
-                $errorMessage = '{"error":"You are requesting a content type which this API cannot produce. Allowed content types are ';
-                $errorMessage .= implode( ' and ', $this->AllowedReturnTypes );
-                $errorMessage .= ', but you have issued a parameter requesting a Content Type of ' . strtoupper( $this->LitSettings->ReturnType ) . '"}';
-                die( $errorMessage );
+                //Requests from browser windows using the address bar will probably have an Accept header of text/html
+                //In order to not be too drastic, let's treat text/html as though it were application/json
+                $acceptHeaders = explode( ",", $this->APICore->getAcceptHeader() );
+                if( in_array( 'text/html', $acceptHeaders ) || in_array( 'text/plain', $acceptHeaders ) || in_array( '*/*', $acceptHeaders ) ) {
+                    $this->APICore->setResponseContentType( AcceptHeader::JSON );
+                } else {
+                    header( $_SERVER[ "SERVER_PROTOCOL" ]." 406 Not Acceptable", true, 406 );
+                    $errorMessage = '{"error":"You are requesting a content type which this API cannot produce. Allowed Accept headers are ';
+                    $errorMessage .= implode( ' and ', $this->APICore->getAllowedAcceptHeaders() );
+                    $errorMessage .= ', but you have issued an request with an Accept header of ' . $this->APICore->getAcceptHeader() . '"}';
+                    die( $errorMessage );
+                }
             }
         } else {
-            if( $this->APICore->hasAcceptHeader() ) {
-                if( $this->APICore->isAllowedAcceptHeader() ) {
-                    $this->LitSettings->ReturnType = $this->AllowedReturnTypes[ $this->APICore->getIdxAcceptHeaderInAllowed() ];
-                    $this->APICore->setResponseContentType( $this->APICore->getAcceptHeader() );
-                } else {
-                    //Requests from browser windows using the address bar will probably have an Accept header of text/html
-                    //In order to not be too drastic, let's treat text/html as though it were application/json
-                    $acceptHeaders = explode( ",", $this->APICore->getAcceptHeader() );
-                    if( in_array( 'text/html', $acceptHeaders ) || in_array( 'text/plain', $acceptHeaders ) || in_array( '*/*', $acceptHeaders ) ) {
-                        $this->LitSettings->ReturnType = ReturnType::JSON;
-                        $this->APICore->setResponseContentType( AcceptHeader::JSON );
-                    } else {
-                        header( $_SERVER[ "SERVER_PROTOCOL" ]." 406 Not Acceptable", true, 406 );
-                        $errorMessage = '{"error":"You are requesting a content type which this API cannot produce. Allowed Accept headers are ';
-                        $errorMessage .= implode( ' and ', $this->APICore->getAllowedAcceptHeaders() );
-                        $errorMessage .= ', but you have issued an request with an Accept header of ' . $this->APICore->getAcceptHeader() . '"}';
-                        die( $errorMessage );
-                    }
-
-                }
-            } else {
-                $this->LitSettings->ReturnType = $this->AllowedReturnTypes[ 0 ];
-                $this->APICore->setResponseContentType( $this->APICore->getAllowedAcceptHeaders()[ 0 ] );
-            }
+            $this->APICore->setResponseContentType( $this->APICore->getAllowedAcceptHeaders()[ 0 ] );
         }
     }
 
