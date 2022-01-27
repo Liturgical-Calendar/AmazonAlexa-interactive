@@ -1,4 +1,7 @@
 <?php
+include_once('includes/enums/AcceptHeader.php');
+include_once('includes/enums/RequestContentType.php');
+include_once('includes/enums/RequestMethod.php');
 
 class APICore {
 
