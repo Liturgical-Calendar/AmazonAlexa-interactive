@@ -6,7 +6,7 @@ include_once('includes/APICore.php');
 
 class AlexaSkill {
     public APICore $APICore;
-    private array $requestParams;
+    public array $requestParams;
 
     public function __construct(){
         $this->APICore                              = new APICore();
