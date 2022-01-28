@@ -5,8 +5,8 @@ include_once( 'includes/enums/RequestContentType.php' );
 include_once( 'includes/AlexaSkill.php' );
 
 $AlexaSkill = new AlexaSkill();
-$AlexaSkill->APICore->setAllowedRequestMethods( [ RequestMethod::GET, RequestMethod::POST, RequestMethod::OPTIONS ] );
-$AlexaSkill->APICore->setAllowedRequestContentTypes( [ RequestContentType::JSON, RequestContentType::FORMDATA ] );
+$AlexaSkill->APICore->setAllowedRequestMethods( [ RequestMethod::POST, RequestMethod::OPTIONS ] );
+$AlexaSkill->APICore->setAllowedRequestContentTypes( [ RequestContentType::JSON ] );
 $AlexaSkill->APICore->setAllowedAcceptHeaders( [ AcceptHeader::JSON ] );
 
 $AlexaSkill->Init();
