@@ -65,5 +65,9 @@ class AlexaSkill {
             $this->APICore->setResponseContentType( $this->APICore->getAllowedAcceptHeaders()[ 0 ] );
         }
     }
+    
+    public function Init() : void {
+        $this->handleRequest();
+    }
 
 }
