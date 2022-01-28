@@ -30,13 +30,17 @@ class AlexaSkill {
     private array $LitCalData       = [];
     private array $LitCalFeed       = [];
     private IntlDateFormatter $monthDayFmt;
+    private IntlDateFormatter $dowMonthDayFmt;
+    private NumberFormatter $ordFmt;
     private string $Locale          = "en_US";
+    private int $currentYear;
 
     public function __construct(){
         $this->APICore = new APICore();
         $this->output = new Response();
         $timestampRequestReceived = new DateTime('NOW');
         $this->log[] = $timestampRequestReceived->format('r');
+        $this->currentYear = intval( $timestampRequestReceived->format('Y') );
     }
 
     private function readRequest() {
@@ -96,10 +100,16 @@ class AlexaSkill {
         setlocale( LC_ALL, $localeArray );
         bindtextdomain("catholicliturgy", "i18n");
         textdomain("catholicliturgy");
-        $this->monthDayFmt  = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::FULL, 'UTC', IntlDateFormatter::GREGORIAN, 'd MMMM' );
+        $this->monthDayFmt  = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'd MMMM' );
         $locale = strtoupper( explode('_', $this->Locale)[0] );
         $this->LitCommon    = new LitCommon( $locale );
         $this->LitGrade     = new LitGrade( $locale );
+        if( $locale === 'EN' ) {
+            $this->dowMonthDayFmt = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, MMMM ' );
+            $this->ordFmt = NumberFormatter::create($this->Locale, NumberFormatter::ORDINAL);
+        } else {
+            $this->dowMonthDayFmt = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, d MMMM' );
+        }
     }
 
     private function handleRequest() {
@@ -134,21 +144,101 @@ class AlexaSkill {
                         case 'CatholicLiturgyIntent':
                             $slots = $intent->slots;
 
-                            $year       = property_exists( $slots->date, 'value' ) ? intval( $slots->date->value ) : null;
+                            $year       = property_exists( $slots->date, 'value' ) ?
+                                            intval( $slots->date->value ) :
+                                            ( property_exists( $slots->year, 'value' ) ? intval( $slots->year->value ) : null );
                             $rank       = property_exists( $slots->rank, 'value' ) ? $slots->rank->value : null;
-                            $festivity  = property_exists( $slots->festivity, 'value' ) ? $slots->festivity->value : null;
-
+                            $fest       = $this->retrieveBestValue( $slots->festivity );
+                            $this->log[] = "slot festivity: best value = \t{$fest}";
                             $queryArray = [];
                             $queryArray[ "locale" ] = strtoupper( explode('_', $this->Locale)[0] );
                             if( $year !== null ) {
                                 $queryArray[ "year" ] = $year;
                             }
                             $this->sendAPIRequest( $queryArray );
+                            $LitCal = $this->LitCalData["LitCal"];
+                            if( isset( $LitCal[$fest] ) ) {
+                                $festivity = new Festivity( $LitCal[$fest] );
+                                $titleText = sprintf(
+                                    _( 'Date of %1$s in the year %2$d' ),
+                                    $festivity->name,
+                                    $year
+                                );
+                                $formattedDate = $this->dowMonthDayFmt->format( $festivity->date->format( 'U' ) );
+                                if( explode('_', $this->Locale)[0] === 'en' ) {
+                                    $formattedDate .= $this->ordFmt->format( $festivity->date->format( 'j' ) );
+                                }
+                                if( $festivity->grade === LitGrade::HIGHER_SOLEMNITY ) {
+                                    if( $year > $this->currentYear ) {
+                                        $message = _( '%1$s falls on %2$s in the year %3$d.' );
+                                    }
+                                    else if( $year === $this->currentYear ) {
+                                        $message = _( 'This year %1$s falls on %2$s.' );
+                                    }
+                                    else {
+                                        $message = _( '%1$s fell on %2$s in the year %3$d.' );
+                                    }
+                                    $mainText = sprintf(
+                                        $message,
+                                        $festivity->name,
+                                        $formattedDate,
+                                        $year
+                                    ); 
+                                } else {
+                                    $festivityGrade = $festivity->displayGrade != "" ? $festivity->displayGrade : $this->LitGrade->i18n( $festivity->grade );
+                                    if( $year > $this->currentYear ) {
+                                        $message = _( 'The %1$s: \'%2$s\', falls on %3$s in the year %4$d.' );
+                                    }
+                                    else if( $year === $this->currentYear ) {
+                                        $message = _( 'This year, the %1$s: \'%2$s\', falls on %3$s.' );
+                                    }
+                                    else {
+                                        $message = _( 'The %1$s: \'%2$s\', fell on %3$s in the year %4$d.' );
+                                    }
+                                    $mainText = sprintf(
+                                        $message,
+                                        $festivityGrade,
+                                        $festivity->name,
+                                        $formattedDate,
+                                        $year
+                                    );
+                                }
+                            }
+                            else if ( $this->litCalMessagesExist( $slots->festivity->value ) ) {
+                                $messages = [];
+                                $slotVals = explode(' ', strtolower($slots->festivity->value));
+                                foreach( $this->LitCalData["Messages"] as $message ) {
+                                    $match = false;
+                                    foreach( $slotVals as $idx => $piece ) {
+                                        if( $idx === 0 ) {
+                                            $match = strpos( strtolower($message), $piece );
+                                        } else {
+                                            $match = ( strpos( strtolower($message), $piece ) && $match );
+                                        }
+                                    }
+                                    if( $match ){
+                                        $messages[] = strip_tags( $message );
+                                    }
+                                }
+                                $titleText = sprintf( _( 'What happened to %1$s in %2$d' ), $slots->festivity->value, $year );
+                                $mainText = sprintf(
+                                    _( 'Catholic Liturgy gathered the following information about %s:' ),
+                                    $slots->festivity->value
+                                );
+                                $mainText .= ' ' . implode(' ', $messages );
+                            }
+                            else {
+                                $titleText = _( 'Catholic Liturgy is confused.' );
+                                $mainText = sprintf(
+                                    _( 'Sorry, I could not find any information about %s.' ),
+                                    $slots->festivity->value
+                                );
+                            }
                             //[ $titleText, $mainTest ] = $this->filterEventsToday();
 
                             $alexaResponse = new AlexaResponse( false );
-                            $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", implode(' ', $defaultReponse) );
-                            $alexaResponse->card = new Card( "Standard", $defaultReponse[0], $defaultReponse[1] );
+                            $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", $mainText );
+                            $alexaResponse->card = new Card( "Standard", $titleText, $mainText );
         
                             $this->output->response = $alexaResponse;
         
@@ -166,6 +256,33 @@ class AlexaSkill {
                     break;
                 }
         }
+    }
+
+    private function litCalMessagesExist( string $slotVal ) : bool {
+        $slotVals = explode(' ', strtolower($slotVal));
+        foreach( $this->LitCalData["Messages"] as $message ) {
+            $match = false;
+            foreach( $slotVals as $idx => $piece ) {
+                if( $idx === 0 ) {
+                    $match = strpos( strtolower($message), $piece );
+                } else {
+                    $match = ( strpos( strtolower($message), $piece ) && $match );
+                }
+            }
+            if( $match ){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function retrieveBestValue( object $slot ) : string {
+        if( property_exists( $slot, 'resolutions' ) ) {
+            $resPerAuth = $slot->resolutions->resolutionsPerAuthority;
+            $bestRes = $resPerAuth[0];
+            return $bestRes->values[0]->value->id;
+        }
+        return $slot->value;
     }
 
     private function filterEventsToday() : array {
