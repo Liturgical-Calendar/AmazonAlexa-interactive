@@ -9,6 +9,8 @@ $AlexaSkill->APICore->setAllowedRequestMethods( [ RequestMethod::GET, RequestMet
 $AlexaSkill->APICore->setAllowedRequestContentTypes( [ RequestContentType::JSON, RequestContentType::FORMDATA ] );
 $AlexaSkill->APICore->setAllowedAcceptHeaders( [ AcceptHeader::JSON ] );
 
+$AlexaSkill->Init();
+
 $timestampRequestReceived = new DateTime('NOW');
 
 $log = $timestampRequestReceived->format('r') . PHP_EOL;
