@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-29 10:35+0100\n"
+"POT-Creation-Date: 2022-01-29 16:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: includes/AlexaSkill.php:130
@@ -94,35 +94,35 @@ msgid "Today is"
 msgstr ""
 
 #. translators: grade, name
-#: includes/AlexaSkill.php:342
+#: includes/AlexaSkill.php:343
 #, php-format
-msgid "This evening there will be a Vigil Mass for the %s %s."
+msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
 msgstr ""
 
-#: includes/AlexaSkill.php:342
+#: includes/AlexaSkill.php:345
 msgid "Vigil Mass"
 msgstr ""
 
 #. translators: 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
-#: includes/AlexaSkill.php:347 includes/AlexaSkill.php:364
+#: includes/AlexaSkill.php:351 includes/AlexaSkill.php:368
 #, php-format
 msgid "Today is %1$s the %2$s of %3$s."
 msgstr ""
 
-#: includes/AlexaSkill.php:348 includes/AlexaSkill.php:357
-#: includes/AlexaSkill.php:365 includes/AlexaSkill.php:379
+#: includes/AlexaSkill.php:352 includes/AlexaSkill.php:361
+#: includes/AlexaSkill.php:369 includes/AlexaSkill.php:383
 msgid "also"
 msgstr ""
 
 #. translators: CTXT: Feast of the Lord. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
-#: includes/AlexaSkill.php:356
+#: includes/AlexaSkill.php:360
 #, php-format
 msgid "Today is %1$s the %2$s, %3$s."
 msgstr ""
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. (also|''), 2. name of the festivity
-#: includes/AlexaSkill.php:378
+#: includes/AlexaSkill.php:382
 #, php-format
 msgid "Today is %1$s the day of %2$s."
 msgstr ""
