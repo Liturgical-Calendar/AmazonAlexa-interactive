@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-29 21:00+0000\n"
-"PO-Revision-Date: 2022-01-29 20:35+0000\n"
+"PO-Revision-Date: 2022-01-29 21:01+0000\n"
 "Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
 "Language-Team: Italian <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/it/>\n"
@@ -343,7 +343,7 @@ msgstr "Per le sante"
 #: includes/enums/LitCommon.php:168 includes/enums/LitCommon.php:180
 msgctxt "(SING_FEMM)"
 msgid "of the"
-msgstr ""
+msgstr "della"
 
 #. translators: (plural feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:171
@@ -361,7 +361,7 @@ msgstr "dei"
 #: includes/enums/LitCommon.php:183
 msgctxt "(SING_MASC)"
 msgid "of the"
-msgstr ""
+msgstr "del"
 
 #: includes/enums/LitCommon.php:264
 msgid "From the Common"
