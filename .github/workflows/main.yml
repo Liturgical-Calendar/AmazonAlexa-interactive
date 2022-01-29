@@ -45,7 +45,7 @@ jobs:
           # The branch to push the changes back to, defaults to the current branch
           branch: ${{ github.ref }}
           # The files to add separated by space, defaults to every file
-          files: i18n/litcal.pot
+          files: i18n/catholicliturgy.pot
           # The repository to push the code to, defaults to origin (e.g. this repository)
           repository: origin
           # The token used to push the code, not needed if you push to the same repository
