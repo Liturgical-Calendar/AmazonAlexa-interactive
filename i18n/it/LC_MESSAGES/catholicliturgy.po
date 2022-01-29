@@ -1,14 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-29 10:35+0100\n"
-"PO-Revision-Date: 2022-01-29 10:04+0000\n"
+"PO-Revision-Date: 2022-01-29 15:42+0000\n"
 "Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
 "Language-Team: Italian <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/it/>\n"
@@ -234,22 +233,22 @@ msgstr "Per una santa martire"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:87
 msgid "For a Pope"
-msgstr "Per un Papa"
+msgstr "Per un papa"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:89
 msgid "For a Bishop"
-msgstr "Per i vescovi"
+msgstr "Per un vescovo"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:91
 msgid "For One Pastor"
-msgstr "Per un Pastore"
+msgstr "Per un pastore"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:93
 msgid "For Several Pastors"
-msgstr "Per i pastori"
+msgstr "Per più pastori"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:95
@@ -289,7 +288,7 @@ msgstr "Per più santi"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:109
 msgid "For One Saint"
-msgstr "Per un Santo"
+msgstr "Per un santo"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:111
@@ -304,7 +303,7 @@ msgstr "Per un monaco"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:115
 msgid "For a Nun"
-msgstr "Per i religiosi"
+msgstr "Per una monaca"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:117
