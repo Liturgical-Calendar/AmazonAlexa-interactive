@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-29 20:32+0000\n"
-"PO-Revision-Date: 2022-01-29 15:50+0000\n"
+"PO-Revision-Date: 2022-01-29 20:35+0000\n"
 "Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
 "Language-Team: Italian <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/it/>\n"
@@ -99,10 +99,9 @@ msgstr "Oggi è"
 
 #. translators: 1. name of the festivity
 #: includes/AlexaSkill.php:360
-#, fuzzy, php-format
-#| msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
+#, php-format
 msgid "This evening there will be a Vigil Mass for the %1$s."
-msgstr "Questa sera ci sarà una Messa di Vigilia per la %1$s %2$s."
+msgstr "Questa sera ci sarà una Messa di Vigilia per la %1$s."
 
 #: includes/AlexaSkill.php:361 includes/AlexaSkill.php:368
 msgid "Vigil Mass"
@@ -130,10 +129,9 @@ msgstr "anche"
 #. translators: CTXT: Sundays. 1. (also|''), 2. name of the festivity
 #. translators: CTXT: Saturday memorial BVM. 1. (also|''), 2. name of the festivity
 #: includes/AlexaSkill.php:385 includes/AlexaSkill.php:404
-#, fuzzy, php-format
-#| msgid "Today is %1$s the %2$s, %3$s."
+#, php-format
 msgid "Today is %1$s the %2$s."
-msgstr "Oggi è %1$s la %2$s, %3$s."
+msgstr "Oggi è %1$s la %2$s."
 
 #. translators: CTXT: Feast of the Lord. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #: includes/AlexaSkill.php:394
