@@ -1,14 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-29 10:35+0100\n"
-"PO-Revision-Date: 2022-01-29 10:04+0000\n"
+"POT-Creation-Date: 2022-01-29 16:39+0100\n"
+"PO-Revision-Date: 2022-01-29 15:50+0000\n"
 "Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
 "Language-Team: Italian <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/it/>\n"
@@ -99,35 +98,35 @@ msgid "Today is"
 msgstr "Oggi è"
 
 #. translators: grade, name
-#: includes/AlexaSkill.php:342
+#: includes/AlexaSkill.php:343
 #, php-format
-msgid "This evening there will be a Vigil Mass for the %s %s."
-msgstr "Questa sera ci sarà una Messa di Vigilia per la %s %s."
+msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
+msgstr "Questa sera ci sarà una Messa di Vigilia per la %1$s %2$s."
 
-#: includes/AlexaSkill.php:342
+#: includes/AlexaSkill.php:345
 msgid "Vigil Mass"
 msgstr "Messa della vigilia"
 
 #. translators: 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
-#: includes/AlexaSkill.php:347 includes/AlexaSkill.php:364
+#: includes/AlexaSkill.php:351 includes/AlexaSkill.php:368
 #, php-format
 msgid "Today is %1$s the %2$s of %3$s."
 msgstr "Oggi è %1$s la %2$s di %3$s."
 
-#: includes/AlexaSkill.php:348 includes/AlexaSkill.php:357
-#: includes/AlexaSkill.php:365 includes/AlexaSkill.php:379
+#: includes/AlexaSkill.php:352 includes/AlexaSkill.php:361
+#: includes/AlexaSkill.php:369 includes/AlexaSkill.php:383
 msgid "also"
 msgstr "anche"
 
 #. translators: CTXT: Feast of the Lord. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
-#: includes/AlexaSkill.php:356
+#: includes/AlexaSkill.php:360
 #, php-format
 msgid "Today is %1$s the %2$s, %3$s."
 msgstr "Oggi è %1$s la %2$s, %3$s."
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. (also|''), 2. name of the festivity
-#: includes/AlexaSkill.php:378
+#: includes/AlexaSkill.php:382
 #, php-format
 msgid "Today is %1$s the day of %2$s."
 msgstr "Oggi è %1$s il giorno di %2$s."
@@ -234,22 +233,22 @@ msgstr "Per una santa martire"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:87
 msgid "For a Pope"
-msgstr "Per un Papa"
+msgstr "Per un papa"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:89
 msgid "For a Bishop"
-msgstr "Per i vescovi"
+msgstr "Per un vescovo"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:91
 msgid "For One Pastor"
-msgstr "Per un Pastore"
+msgstr "Per un pastore"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:93
 msgid "For Several Pastors"
-msgstr "Per i pastori"
+msgstr "Per più pastori"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:95
@@ -289,7 +288,7 @@ msgstr "Per più santi"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:109
 msgid "For One Saint"
-msgstr "Per un Santo"
+msgstr "Per un santo"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:111
@@ -304,7 +303,7 @@ msgstr "Per un monaco"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:115
 msgid "For a Nun"
-msgstr "Per i religiosi"
+msgstr "Per una monaca"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:117
