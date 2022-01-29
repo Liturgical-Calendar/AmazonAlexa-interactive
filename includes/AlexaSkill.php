@@ -148,7 +148,7 @@ class AlexaSkill {
                                             intval( $slots->date->value ) :
                                             ( property_exists( $slots->year, 'value' ) ? intval( $slots->year->value ) : null );
                             $rank       = property_exists( $slots->rank, 'value' ) ? $slots->rank->value : null;
-                            $fest       = $this->retrieveBestValue( $slots->festivity );
+                            [$fest, $festName]       = $this->retrieveBestValue( $slots->festivity );
                             $this->log[] = "slot festivity: best value = \t{$fest}";
                             $queryArray = [];
                             $queryArray[ "locale" ] = strtoupper( explode('_', $this->Locale)[0] );
@@ -204,26 +204,34 @@ class AlexaSkill {
                                     );
                                 }
                             }
-                            else if ( $this->litCalMessagesExist( $slots->festivity->value ) ) {
+                            else if ( $this->litCalMessagesExist( $festName ) ) {
                                 $messages = [];
-                                $slotVals = explode(' ', strtolower($slots->festivity->value));
+                                foreach( $this->LitCalData["Messages"] as $message ) {
+                                    if( strpos( $message, $festName ) ) {
+                                        $messages[] = $message;
+                                    }
+                                }
+                                /*
+                                $transliterator = Transliterator::createFromRules(':: NFD; :: [:Nonspacing Mark:] Remove; :: NFC;', Transliterator::FORWARD);
+                                $slotVals = explode(' ', $transliterator->transliterate(strtolower($slots->festivity->value)));
                                 foreach( $this->LitCalData["Messages"] as $message ) {
                                     $match = false;
                                     foreach( $slotVals as $idx => $piece ) {
                                         if( $idx === 0 ) {
-                                            $match = strpos( strtolower($message), $piece );
+                                            $match = strpos( $transliterator->transliterate(strtolower($message)), $piece );
                                         } else {
-                                            $match = ( strpos( strtolower($message), $piece ) && $match );
+                                            $match = ( strpos( $transliterator->transliterate(strtolower($message)), $piece ) && $match );
                                         }
                                     }
                                     if( $match ){
                                         $messages[] = strip_tags( $message );
                                     }
                                 }
+                                */
                                 $titleText = sprintf( _( 'What happened to %1$s in %2$d' ), $slots->festivity->value, $year );
                                 $mainText = sprintf(
                                     _( 'Catholic Liturgy gathered the following information about %s:' ),
-                                    $slots->festivity->value
+                                    $festName
                                 );
                                 $mainText .= ' ' . implode(' ', $messages );
                             }
@@ -259,30 +267,38 @@ class AlexaSkill {
     }
 
     private function litCalMessagesExist( string $slotVal ) : bool {
-        $slotVals = explode(' ', strtolower($slotVal));
+        foreach( $this->LitCalData["Messages"] as $message ) {
+            if( strpos( $message, $slotVal ) ) {
+                return true;
+            }
+        }
+        /*
+        $transliterator = Transliterator::createFromRules(':: NFD; :: [:Nonspacing Mark:] Remove; :: NFC;', Transliterator::FORWARD);
+        $slotVals = explode(' ', $transliterator->transliterate(strtolower($slotVal)));
         foreach( $this->LitCalData["Messages"] as $message ) {
             $match = false;
             foreach( $slotVals as $idx => $piece ) {
                 if( $idx === 0 ) {
-                    $match = strpos( strtolower($message), $piece );
+                    $match = strpos( $transliterator->transliterate(strtolower($message)), $piece );
                 } else {
-                    $match = ( strpos( strtolower($message), $piece ) && $match );
+                    $match = ( strpos( $transliterator->transliterate(strtolower($message)), $piece ) && $match );
                 }
             }
             if( $match ){
                 return true;
             }
         }
+        */
         return false;
     }
 
-    private function retrieveBestValue( object $slot ) : string {
+    private function retrieveBestValue( object $slot ) : array {
         if( property_exists( $slot, 'resolutions' ) ) {
             $resPerAuth = $slot->resolutions->resolutionsPerAuthority;
             $bestRes = $resPerAuth[0];
-            return $bestRes->values[0]->value->id;
+            return [$bestRes->values[0]->value->id,$bestRes->values[0]->value->name];
         }
-        return $slot->value;
+        return [$slot->value,$slot->value];
     }
 
     private function filterEventsToday() : array {
