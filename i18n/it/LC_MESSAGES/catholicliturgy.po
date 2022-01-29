@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-29 16:39+0100\n"
-"PO-Revision-Date: 2022-01-29 15:42+0000\n"
+"PO-Revision-Date: 2022-01-29 15:50+0000\n"
 "Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
 "Language-Team: Italian <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/it/>\n"
@@ -99,10 +99,9 @@ msgstr "Oggi è"
 
 #. translators: grade, name
 #: includes/AlexaSkill.php:343
-#, fuzzy, php-format
-#| msgid "This evening there will be a Vigil Mass for the %s %s."
+#, php-format
 msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
-msgstr "Questa sera ci sarà una Messa di Vigilia per la %s %s."
+msgstr "Questa sera ci sarà una Messa di Vigilia per la %1$s %2$s."
 
 #: includes/AlexaSkill.php:345
 msgid "Vigil Mass"
