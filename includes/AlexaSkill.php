@@ -340,7 +340,7 @@ class AlexaSkill {
             if( $festivity->isVigilMass ) {
                 $mainText = sprintf(
                     /**translators: grade, name */
-                    _( "This evening there will be a Vigil Mass for the %1$s %2$s." ),
+                    _( 'This evening there will be a Vigil Mass for the %1$s %2$s.' ),
                     $this->LitGrade->i18n( $festivity->grade, false ),
                     trim( str_replace( _( "Vigil Mass" ), "", $festivity->name ) )
                 );
