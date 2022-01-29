@@ -338,8 +338,12 @@ class AlexaSkill {
             $mainText = _( "Today is" ) . " " . $festivity->name . ".";
         } else{ 
             if( $festivity->isVigilMass ) {
-                /**translators: grade, name */
-                $mainText = sprintf( _( "This evening there will be a Vigil Mass for the %s %s." ), $this->LitGrade->i18n( $festivity->grade, false ), trim( str_replace( _( "Vigil Mass" ), "", $festivity->name ) ) );
+                $mainText = sprintf(
+                    /**translators: grade, name */
+                    _( "This evening there will be a Vigil Mass for the %1$s %2$s." ),
+                    $this->LitGrade->i18n( $festivity->grade, false ),
+                    trim( str_replace( _( "Vigil Mass" ), "", $festivity->name ) )
+                );
             } else if( $festivity->grade < LitGrade::HIGHER_SOLEMNITY ) {
                 if( $festivity->displayGrade != "" ) {
                     $mainText = sprintf(
