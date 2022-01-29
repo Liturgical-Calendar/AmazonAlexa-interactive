@@ -128,7 +128,7 @@ class AlexaSkill {
                     //file_put_contents('requests.log', implode(PHP_EOL, $log) . PHP_EOL . PHP_EOL, FILE_APPEND);
                     $defaultReponse = [
                         _( "Hello from Catholic Liturgy!" ),
-                        $mainText . '' . _( "If you'd like any information about the Liturgical year, just ask!" )
+                        $mainText . ' ' . _( "If you'd like any information about the Liturgical year, just ask!" )
                     ];
 
                     $alexaResponse = new AlexaResponse( false );
@@ -418,7 +418,7 @@ class AlexaSkill {
                 }
                 
                 if( $festivity->grade < LitGrade::FEAST && $festivity->common != LitCommon::PROPRIO ) {
-                    $mainText = $mainText . " " . $this->LitCommon->C( $festivity->common );
+                    $mainText = $mainText . " " . $this->LitCommon->C( $festivity->common ) . ".";
                 }
             } else {
                 $mainText = sprintf(
