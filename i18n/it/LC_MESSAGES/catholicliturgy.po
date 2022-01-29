@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-29 16:39+0100\n"
+"POT-Creation-Date: 2022-01-29 20:32+0000\n"
 "PO-Revision-Date: 2022-01-29 15:50+0000\n"
 "Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
 "Language-Team: Italian <https://translate.johnromanodorazio.com/projects/"
@@ -89,44 +89,60 @@ msgstr ""
 "Non sono sicuro di comprendere quel che chiedi. Volevi la Liturgia del "
 "giorno?"
 
-#: includes/AlexaSkill.php:322
+#: includes/AlexaSkill.php:323
 msgid "Liturgy of the Day"
 msgstr "Liturgia del Giorno"
 
-#: includes/AlexaSkill.php:338
+#: includes/AlexaSkill.php:354
 msgid "Today is"
 msgstr "Oggi è"
 
-#. translators: grade, name
-#: includes/AlexaSkill.php:343
+#. translators: 1. name of the festivity
+#: includes/AlexaSkill.php:360
+#, fuzzy, php-format
+#| msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
+msgid "This evening there will be a Vigil Mass for the %1$s."
+msgstr "Questa sera ci sarà una Messa di Vigilia per la %1$s %2$s."
+
+#: includes/AlexaSkill.php:361 includes/AlexaSkill.php:368
+msgid "Vigil Mass"
+msgstr "Messa della vigilia"
+
+#. translators: 1. grade of the festivity, 2. name of the festivity
+#: includes/AlexaSkill.php:366
 #, php-format
 msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
 msgstr "Questa sera ci sarà una Messa di Vigilia per la %1$s %2$s."
 
-#: includes/AlexaSkill.php:345
-msgid "Vigil Mass"
-msgstr "Messa della vigilia"
-
 #. translators: 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
-#: includes/AlexaSkill.php:351 includes/AlexaSkill.php:368
+#: includes/AlexaSkill.php:375 includes/AlexaSkill.php:412
 #, php-format
 msgid "Today is %1$s the %2$s of %3$s."
 msgstr "Oggi è %1$s la %2$s di %3$s."
 
-#: includes/AlexaSkill.php:352 includes/AlexaSkill.php:361
-#: includes/AlexaSkill.php:369 includes/AlexaSkill.php:383
+#: includes/AlexaSkill.php:376 includes/AlexaSkill.php:386
+#: includes/AlexaSkill.php:395 includes/AlexaSkill.php:405
+#: includes/AlexaSkill.php:413 includes/AlexaSkill.php:427
 msgid "also"
 msgstr "anche"
 
+#. translators: CTXT: Sundays. 1. (also|''), 2. name of the festivity
+#. translators: CTXT: Saturday memorial BVM. 1. (also|''), 2. name of the festivity
+#: includes/AlexaSkill.php:385 includes/AlexaSkill.php:404
+#, fuzzy, php-format
+#| msgid "Today is %1$s the %2$s, %3$s."
+msgid "Today is %1$s the %2$s."
+msgstr "Oggi è %1$s la %2$s, %3$s."
+
 #. translators: CTXT: Feast of the Lord. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
-#: includes/AlexaSkill.php:360
+#: includes/AlexaSkill.php:394
 #, php-format
 msgid "Today is %1$s the %2$s, %3$s."
 msgstr "Oggi è %1$s la %2$s, %3$s."
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. (also|''), 2. name of the festivity
-#: includes/AlexaSkill.php:382
+#: includes/AlexaSkill.php:426
 #, php-format
 msgid "Today is %1$s the day of %2$s."
 msgstr "Oggi è %1$s il giorno di %2$s."
