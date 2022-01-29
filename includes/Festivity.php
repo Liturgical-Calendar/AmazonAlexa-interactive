@@ -21,6 +21,7 @@ class Festivity
     public string       $common;
     public string       $liturgicalYear;
     public bool         $isVigilMass;
+    public string       $tag;
 
     function __construct( array $festivity ) {
         $this->name     = $festivity["name"];
