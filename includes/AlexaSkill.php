@@ -32,7 +32,10 @@ class AlexaSkill {
     private IntlDateFormatter $monthDayFmt;
     private IntlDateFormatter $dowMonthDayFmt;
     private NumberFormatter $ordFmt;
-    private string $Locale          = "en_US";
+    private string $Locale          = "en-US";
+    private string $CanonLocale     = "en_US";
+    private string $LitLocale       = LitLocale::ENGLISH;
+    private string $Region          = "USA";
     private int $currentYear;
 
     public function __construct(){
@@ -89,26 +92,34 @@ class AlexaSkill {
     private function setLocale() : void {
         if( property_exists( $this->requestParams, 'request' ) ) {
             $request = $this->requestParams->request;
-            $this->Locale = str_replace( '-', '_', $request->locale );
+            $this->Locale       = $request->locale;                                                 //e.g. "en-US"
+            $this->CanonLocale  = Locale::canonicalize( $request->locale );                         //e.g. "en_US"
+            $this->LitLocale    = strtoupper( Locale::getPrimaryLanguage( $request->locale ) );     //e.g. "en"
+            if( Locale::getRegion( $request->locale ) === 'US' ) {
+                //Since we use "USA" instead of "UNITED STATES" to designate the national calendar in the LitCal project,
+                //we must manually set the Region in this case
+                $this->Region   = 'USA';
+            } else {
+                $this->Region   = strtoupper( Locale::getDisplayRegion( $request->locale, 'en' ) ); //e.g. "ITALY"
+            }
         }
         $localeArray = [
-            $this->Locale . '.utf8',
-            $this->Locale . '.UTF-8',
-            $this->Locale,
-            explode('_', $this->Locale)[0]
+            $this->CanonLocale . '.utf8',
+            $this->CanonLocale . '.UTF-8',
+            $this->CanonLocale,
+            Locale::getPrimaryLanguage( $request->locale )
         ];
         setlocale( LC_ALL, $localeArray );
         bindtextdomain("catholicliturgy", "i18n");
         textdomain("catholicliturgy");
-        $this->monthDayFmt  = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'd MMMM' );
-        $locale = strtoupper( explode('_', $this->Locale)[0] );
-        $this->LitCommon    = new LitCommon( $locale );
-        $this->LitGrade     = new LitGrade( $locale );
-        if( $locale === 'EN' ) {
-            $this->dowMonthDayFmt = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, MMMM ' );
-            $this->ordFmt = NumberFormatter::create($this->Locale, NumberFormatter::ORDINAL);
+        $this->monthDayFmt  = IntlDateFormatter::create($this->CanonLocale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'd MMMM' );
+        $this->LitCommon    = new LitCommon( $this->LitLocale );
+        $this->LitGrade     = new LitGrade( $this->LitLocale );
+        if( $this->LitLocale === LitLocale::ENGLISH ) {
+            $this->dowMonthDayFmt = IntlDateFormatter::create($this->CanonLocale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, MMMM ' );
+            $this->ordFmt = NumberFormatter::create($this->CanonLocale, NumberFormatter::ORDINAL);
         } else {
-            $this->dowMonthDayFmt = IntlDateFormatter::create($this->Locale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, d MMMM' );
+            $this->dowMonthDayFmt = IntlDateFormatter::create($this->CanonLocale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, d MMMM' );
         }
     }
 
@@ -122,7 +133,8 @@ class AlexaSkill {
             switch( $request->type ) {
                 case 'LaunchRequest':
                     $queryArray = [];
-                    $queryArray[ "locale" ] = strtoupper( explode('_', $this->Locale)[0] );
+                    $queryArray[ "locale" ] = $this->LitLocale;
+                    $queryArray[ "nationalcalendar" ] = $this->Region;
                     $this->sendAPIRequest( $queryArray );
                     [ $titleText, $mainText ] = $this->filterEventsToday();
                     //file_put_contents('requests.log', implode(PHP_EOL, $log) . PHP_EOL . PHP_EOL, FILE_APPEND);
@@ -151,7 +163,8 @@ class AlexaSkill {
                             [$fest, $festName]       = $this->retrieveBestValue( $slots->festivity );
                             $this->log[] = "slot festivity: best value = \t{$fest}";
                             $queryArray = [];
-                            $queryArray[ "locale" ] = strtoupper( explode('_', $this->Locale)[0] );
+                            $queryArray[ "locale" ] = $this->LitLocale;
+                            $queryArray[ "nationalcalendar" ] = $this->Region;
                             if( $year !== null ) {
                                 $queryArray[ "year" ] = $year;
                             }
@@ -165,7 +178,7 @@ class AlexaSkill {
                                     $year
                                 );
                                 $formattedDate = $this->dowMonthDayFmt->format( $festivity->date->format( 'U' ) );
-                                if( explode('_', $this->Locale)[0] === 'en' ) {
+                                if( $this->LitLocale === LitLocale::ENGLISH ) {
                                     $formattedDate .= $this->ordFmt->format( $festivity->date->format( 'j' ) );
                                 }
                                 if( $festivity->grade === LitGrade::HIGHER_SOLEMNITY ) {
@@ -187,13 +200,13 @@ class AlexaSkill {
                                 } else {
                                     $festivityGrade = $festivity->displayGrade != "" ? $festivity->displayGrade : $this->LitGrade->i18n( $festivity->grade );
                                     if( $year > $this->currentYear ) {
-                                        $message = _( 'The %1$s: \'%2$s\', falls on %3$s in the year %4$d.' );
+                                        $message = _( 'The %1$s: %2$s, falls on %3$s in the year %4$d.' );
                                     }
                                     else if( $year === $this->currentYear ) {
-                                        $message = _( 'This year, the %1$s: \'%2$s\', falls on %3$s.' );
+                                        $message = _( 'This year, the %1$s: %2$s, falls on %3$s.' );
                                     }
                                     else {
-                                        $message = _( 'The %1$s: \'%2$s\', fell on %3$s in the year %4$d.' );
+                                        $message = _( 'The %1$s: %2$s, fell on %3$s in the year %4$d.' );
                                     }
                                     $mainText = sprintf(
                                         $message,
@@ -208,7 +221,7 @@ class AlexaSkill {
                                 $messages = [];
                                 foreach( $this->LitCalData["Messages"] as $message ) {
                                     if( strpos( $message, $festName ) ) {
-                                        $messages[] = $message;
+                                        $messages[] = strip_tags( $message );
                                     }
                                 }
                                 $titleText = sprintf( _( 'What happened to %1$s in %2$d' ), $slots->festivity->value, $year );
@@ -226,8 +239,13 @@ class AlexaSkill {
                                 );
                             }
 
+                            if( $this->LitLocale === LitLocale::ENGLISH && $fest === 'StAngelaMerici' ) {
+                                $spokenText = str_replace( 'Angela Merici', "<lang xml:lang='it-IT'>Angela Merici</lang>", $mainText );
+                            } else {
+                                $spokenText = $mainText;
+                            }
                             $alexaResponse = new AlexaResponse( false );
-                            $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", $mainText );
+                            $alexaResponse->outputSpeech = new OutputSpeech( "SSML", $spokenText );
                             $alexaResponse->card = new Card( "Standard", $titleText, $mainText );
         
                             $this->output->response = $alexaResponse;
@@ -236,7 +254,7 @@ class AlexaSkill {
                         case 'AMAZON.FallbackIntent':
                             $alexaResponse = new AlexaResponse( false );
                             $message = _( "I'm not sure I understand what you are asking. Did you want the Liturgy of the day?" );
-                            $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", $message );
+                            $alexaResponse->outputSpeech = new OutputSpeech( "SSML", $message );
                             $alexaResponse->card = new Card( "Standard","Confused", $message );
                             $this->output->response = $alexaResponse;
                             break;
@@ -245,7 +263,7 @@ class AlexaSkill {
                 case 'SessionEndedRequest':
                     $alexaResponse = new AlexaResponse( true );
                     $message = _( "It has been a pleasure to be of service. Go in peace to love and serve the Lord!" );
-                    $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", $message );
+                    $alexaResponse->outputSpeech = new OutputSpeech( "SSML", $message );
                     $alexaResponse->card = new Card( "Standard","Good bye!", $message );
                     $this->output->response = $alexaResponse;
                     break;
@@ -291,7 +309,7 @@ class AlexaSkill {
                     //fwrite( $logFile, "mainText = $mainText" . "\n" );
                     if( $idx === 0 ) {
                         $titleText = _( "Liturgy of the Day" ) . " ";
-                        if( strtoupper( explode('_', $this->Locale)[0] ) === LitLocale::ENGLISH ) {
+                        if( $this->LitLocale === LitLocale::ENGLISH ) {
                             $titleText .= $festivity->date->format( 'F jS' );
                         } else {
                             $titleText .= $this->monthDayFmt->format( $festivity->date->format( 'U' ) );
