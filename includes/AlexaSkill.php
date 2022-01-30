@@ -211,23 +211,6 @@ class AlexaSkill {
                                         $messages[] = $message;
                                     }
                                 }
-                                /*
-                                $transliterator = Transliterator::createFromRules(':: NFD; :: [:Nonspacing Mark:] Remove; :: NFC;', Transliterator::FORWARD);
-                                $slotVals = explode(' ', $transliterator->transliterate(strtolower($slots->festivity->value)));
-                                foreach( $this->LitCalData["Messages"] as $message ) {
-                                    $match = false;
-                                    foreach( $slotVals as $idx => $piece ) {
-                                        if( $idx === 0 ) {
-                                            $match = strpos( $transliterator->transliterate(strtolower($message)), $piece );
-                                        } else {
-                                            $match = ( strpos( $transliterator->transliterate(strtolower($message)), $piece ) && $match );
-                                        }
-                                    }
-                                    if( $match ){
-                                        $messages[] = strip_tags( $message );
-                                    }
-                                }
-                                */
                                 $titleText = sprintf( _( 'What happened to %1$s in %2$d' ), $slots->festivity->value, $year );
                                 $mainText = sprintf(
                                     _( 'Catholic Liturgy gathered the following information about %s:' ),
@@ -242,7 +225,6 @@ class AlexaSkill {
                                     $slots->festivity->value
                                 );
                             }
-                            //[ $titleText, $mainTest ] = $this->filterEventsToday();
 
                             $alexaResponse = new AlexaResponse( false );
                             $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", $mainText );
@@ -261,6 +243,11 @@ class AlexaSkill {
                     }
                     break;
                 case 'SessionEndedRequest':
+                    $alexaResponse = new AlexaResponse( true );
+                    $message = _( "It has been a pleasure to be of service. Go in peace to love and serve the Lord!" );
+                    $alexaResponse->outputSpeech = new OutputSpeech( "PlainText", $message );
+                    $alexaResponse->card = new Card( "Standard","Good bye!", $message );
+                    $this->output->response = $alexaResponse;
                     break;
                 }
         }
@@ -272,23 +259,6 @@ class AlexaSkill {
                 return true;
             }
         }
-        /*
-        $transliterator = Transliterator::createFromRules(':: NFD; :: [:Nonspacing Mark:] Remove; :: NFC;', Transliterator::FORWARD);
-        $slotVals = explode(' ', $transliterator->transliterate(strtolower($slotVal)));
-        foreach( $this->LitCalData["Messages"] as $message ) {
-            $match = false;
-            foreach( $slotVals as $idx => $piece ) {
-                if( $idx === 0 ) {
-                    $match = strpos( $transliterator->transliterate(strtolower($message)), $piece );
-                } else {
-                    $match = ( strpos( $transliterator->transliterate(strtolower($message)), $piece ) && $match );
-                }
-            }
-            if( $match ){
-                return true;
-            }
-        }
-        */
         return false;
     }
 
@@ -384,7 +354,6 @@ class AlexaSkill {
                                 /**translators: CTXT: Sundays. 1. (also|''), 2. name of the festivity */
                                 _( 'Today is %1$s the %2$s.' ),
                                 ( $idx > 0 ? _( "also" ) : "" ),
-                                $this->LitGrade->i18n( $festivity->grade, false ),
                                 $festivity->name
                             );
     

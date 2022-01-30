@@ -1,0 +1,2465 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "catholic liturgy",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "CatholicLiturgyIntent",
+                    "slots": [
+                        {
+                            "name": "festivity",
+                            "type": "FESTIVITY"
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "rank",
+                            "type": "FESTIVITY_RANK"
+                        }
+                    ],
+                    "samples": [
+                        "what day was {festivity} in the year {year}",
+                        "what day is {festivity} in the year {year}",
+                        "what day is the {rank} of {festivity} in the year {year}",
+                        "what day was the {rank} of {festivity} in the year {year}",
+                        "what day is {festivity} {date}",
+                        "what day was {festivity} {date}",
+                        "when was the {rank} of {festivity} {date}",
+                        "when was {festivity} {date}",
+                        "when was the {rank} of {festivity} in the year {year}",
+                        "when was {festivity} in the year {year}",
+                        "when is the {rank} of {festivity} {date}",
+                        "when is {festivity} {date}",
+                        "when is the {rank} of {festivity} in the year {year}",
+                        "when is {festivity} in the year {year}",
+                        "what is the liturgy of the day",
+                        "what was the liturgy of the day on the day of my baptism",
+                        "tell me what the liturgy of the day was on the day of my baptism"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "FESTIVITY",
+                    "values": [
+                        {
+                            "id": "HolyThurs",
+                            "name": {
+                                "value": "Holy Thursday",
+                                "synonyms": [
+                                    "Maundy Thursday"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GoodFri",
+                            "name": {
+                                "value": "Good Friday"
+                            }
+                        },
+                        {
+                            "id": "EasterVigil",
+                            "name": {
+                                "value": "Easter Vigil",
+                                "synonyms": [
+                                    "Holy Saturday"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Easter",
+                            "name": {
+                                "value": "Easter Sunday",
+                                "synonyms": [
+                                    "Easter day",
+                                    "Easter"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Christmas",
+                            "name": {
+                                "value": "Christmas"
+                            }
+                        },
+                        {
+                            "id": "MotherGod",
+                            "name": {
+                                "value": "Mary Mother of God"
+                            }
+                        },
+                        {
+                            "id": "Epiphany",
+                            "name": {
+                                "value": "Epiphany"
+                            }
+                        },
+                        {
+                            "id": "Ascension",
+                            "name": {
+                                "value": "Ascension"
+                            }
+                        },
+                        {
+                            "id": "Pentecost",
+                            "name": {
+                                "value": "Pentecost",
+                                "synonyms": [
+                                    "Whitsun"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Easter7",
+                            "name": {
+                                "value": "Seventh Sunday of Easter"
+                            }
+                        },
+                        {
+                            "id": "Christmas2",
+                            "name": {
+                                "value": "Second Sunday after Christmas"
+                            }
+                        },
+                        {
+                            "id": "Advent1",
+                            "name": {
+                                "value": "First Sunday of Advent"
+                            }
+                        },
+                        {
+                            "id": "Advent2",
+                            "name": {
+                                "value": "Second Sunday of Advent"
+                            }
+                        },
+                        {
+                            "id": "Advent3",
+                            "name": {
+                                "value": "Third Sunday of Advent (Gaudete)"
+                            }
+                        },
+                        {
+                            "id": "Advent4",
+                            "name": {
+                                "value": "Fourth Sunday of Advent"
+                            }
+                        },
+                        {
+                            "id": "Lent1",
+                            "name": {
+                                "value": "First Sunday of Lent"
+                            }
+                        },
+                        {
+                            "id": "Lent2",
+                            "name": {
+                                "value": "Second Sunday of Lent"
+                            }
+                        },
+                        {
+                            "id": "Lent3",
+                            "name": {
+                                "value": "Third Sunday of Lent"
+                            }
+                        },
+                        {
+                            "id": "Lent4",
+                            "name": {
+                                "value": "Fourth Sunday of Lent"
+                            }
+                        },
+                        {
+                            "id": "Lent5",
+                            "name": {
+                                "value": "Fifth Sunday of Lent"
+                            }
+                        },
+                        {
+                            "id": "PalmSun",
+                            "name": {
+                                "value": "Palm Sunday"
+                            }
+                        },
+                        {
+                            "id": "Easter2",
+                            "name": {
+                                "value": "Second Sunday of Easter"
+                            }
+                        },
+                        {
+                            "id": "Easter3",
+                            "name": {
+                                "value": "Third Sunday of Easter"
+                            }
+                        },
+                        {
+                            "id": "Easter4",
+                            "name": {
+                                "value": "Fourth Sunday of Easter"
+                            }
+                        },
+                        {
+                            "id": "Easter5",
+                            "name": {
+                                "value": "Fifth Sunday of Easter"
+                            }
+                        },
+                        {
+                            "id": "Easter6",
+                            "name": {
+                                "value": "Sixth Sunday of Easter"
+                            }
+                        },
+                        {
+                            "id": "Trinity",
+                            "name": {
+                                "value": "Holy Trinity Sunday",
+                                "synonyms": [
+                                    "Trinity Sunday"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CorpusChristi",
+                            "name": {
+                                "value": "Corpus Christi",
+                                "synonyms": [
+                                    "Blessed Sacrament",
+                                    "Corpus Domini"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "AshWednesday",
+                            "name": {
+                                "value": "Ash Wednesday"
+                            }
+                        },
+                        {
+                            "id": "MonHolyWeek",
+                            "name": {
+                                "value": "Monday of Holy Week"
+                            }
+                        },
+                        {
+                            "id": "TueHolyWeek",
+                            "name": {
+                                "value": "Tuesday of Holy Week"
+                            }
+                        },
+                        {
+                            "id": "WedHolyWeek",
+                            "name": {
+                                "value": "Wednesday of Holy Week"
+                            }
+                        },
+                        {
+                            "id": "MonOctaveEaster",
+                            "name": {
+                                "value": "Monday of the Octave of Easter"
+                            }
+                        },
+                        {
+                            "id": "TueOctaveEaster",
+                            "name": {
+                                "value": "Tuesday of the Octave of Easter"
+                            }
+                        },
+                        {
+                            "id": "WedOctaveEaster",
+                            "name": {
+                                "value": "Wednesday of the Octave of Easter"
+                            }
+                        },
+                        {
+                            "id": "ThuOctaveEaster",
+                            "name": {
+                                "value": "Thursday of the Octave of Easter"
+                            }
+                        },
+                        {
+                            "id": "FriOctaveEaster",
+                            "name": {
+                                "value": "Friday of the Octave of Easter"
+                            }
+                        },
+                        {
+                            "id": "SatOctaveEaster",
+                            "name": {
+                                "value": "Saturday of the Octave of Easter"
+                            }
+                        },
+                        {
+                            "id": "SacredHeart",
+                            "name": {
+                                "value": "Most Sacred Heart of Jesus",
+                                "synonyms": [
+                                    "Sacred Heart of Jesus",
+                                    "Sacred Heart"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ChristKing",
+                            "name": {
+                                "value": "Christ the King"
+                            }
+                        },
+                        {
+                            "id": "BaptismLord",
+                            "name": {
+                                "value": "Baptism of the Lord"
+                            }
+                        },
+                        {
+                            "id": "HolyFamily",
+                            "name": {
+                                "value": "Holy Family of Jesus Mary and Joseph",
+                                "synonyms": [
+                                    "Holy Family"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ImmaculateHeart",
+                            "name": {
+                                "value": "The Immaculate Heart of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Immaculate Heart of Mary",
+                                    "Immaculate Heart"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsBasilGreg",
+                            "name": {
+                                "value": "Saints Basil the Great and Gregory Nazianzen",
+                                "synonyms": [
+                                    "Saints Basil and Gregory",
+                                    "Saint Basil",
+                                    "Saint Gregory Nazianzen",
+                                    "Basil the Great and Gregory Nazianzen",
+                                    "Basil and Gregory"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StRayPenyafort",
+                            "name": {
+                                "value": "Saint Raymond of Penyafort",
+                                "synonyms": [
+                                    "Saint Raymond",
+                                    "Raymond of Penyafort"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StHilaryPoitiers",
+                            "name": {
+                                "value": "Saint Hilary of Poitiers",
+                                "synonyms": [
+                                    "Saint Hilary",
+                                    "Hilary of Poitiers"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAnthonyEgypt",
+                            "name": {
+                                "value": "Saint Anthony of Egypt",
+                                "synonyms": [
+                                    "Saint Anthony of the Desert",
+                                    "Anthony of the Desert",
+                                    "Anthony of Egypt"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StFabianPope",
+                            "name": {
+                                "value": "Saint Fabian",
+                                "synonyms": [
+                                    "Pope Saint Fabian",
+                                    "Fabian",
+                                    "Pope Fabian"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StSebastian",
+                            "name": {
+                                "value": "Saint Sebastian",
+                                "synonyms": [
+                                    "Sebastian"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAgnes",
+                            "name": {
+                                "value": "Saint Agnes",
+                                "synonyms": [
+                                    "Agnes"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StVincentDeacon",
+                            "name": {
+                                "value": "Saint Vincent",
+                                "synonyms": [
+                                    "Vincent",
+                                    "Saint Vincent Deacon",
+                                    "Vincent the Deacon"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StFrancisDeSales",
+                            "name": {
+                                "value": "Saint Francis de Sales",
+                                "synonyms": [
+                                    "Francis de Sales"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ConversionStPaul",
+                            "name": {
+                                "value": "The Conversion of Saint Paul"
+                            }
+                        },
+                        {
+                            "id": "StsTimothyTitus",
+                            "name": {
+                                "value": "Saints Timothy and Titus",
+                                "synonyms": [
+                                    "Timothy and Titus",
+                                    "Saint Timothy",
+                                    "Saint Titus",
+                                    "Timothy",
+                                    "Titus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAngelaMerici",
+                            "name": {
+                                "value": "Saint Angela Merici",
+                                "synonyms": [
+                                    "Angela Merici"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StThomasAquinas",
+                            "name": {
+                                "value": "Saint Thomas Aquinas",
+                                "synonyms": [
+                                    "Thomas Aquinas"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnBosco",
+                            "name": {
+                                "value": "Saint John Bosco",
+                                "synonyms": [
+                                    "John Bosco"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Presentation",
+                            "name": {
+                                "value": "Presentation of the Lord",
+                                "synonyms": [
+                                    "Presentation"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBlase",
+                            "name": {
+                                "value": "Saint Blase",
+                                "synonyms": [
+                                    "Blase"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAnsgar",
+                            "name": {
+                                "value": "Saint Ansgar",
+                                "synonyms": [
+                                    "Ansgar",
+                                    "Saint Oscar",
+                                    "Oscar"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAgatha",
+                            "name": {
+                                "value": "Saint Agatha",
+                                "synonyms": [
+                                    "Agatha"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsPaulMiki",
+                            "name": {
+                                "value": "Saints Paul Miki and companions",
+                                "synonyms": [
+                                    "Paul Miki and companions",
+                                    "Saint Paul Miki",
+                                    "Paul Miki"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJeromeEmiliani",
+                            "name": {
+                                "value": "Saint Jerome Emiliani",
+                                "synonyms": [
+                                    "Jerome Emiliani"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StScholastica",
+                            "name": {
+                                "value": "Saint Scholastica",
+                                "synonyms": [
+                                    "Scholastica"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "LadyLourdes",
+                            "name": {
+                                "value": "Our Lady of Lourdes"
+                            }
+                        },
+                        {
+                            "id": "StsCyrilMethodius",
+                            "name": {
+                                "value": "Saints Cyril and Methodius",
+                                "synonyms": [
+                                    "Cyril and Methodius"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "SevenHolyFounders",
+                            "name": {
+                                "value": "Seven Holy Founders of the Servite Order",
+                                "synonyms": [
+                                    "Seven Holy Founders"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPeterDamian",
+                            "name": {
+                                "value": "Saint Peter Damian",
+                                "synonyms": [
+                                    "Peter Damian"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ChairStPeter",
+                            "name": {
+                                "value": "Chair of Saint Peter"
+                            }
+                        },
+                        {
+                            "id": "StPolycarp",
+                            "name": {
+                                "value": "Saint Polycarp",
+                                "synonyms": [
+                                    "Polycarp"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCasimir",
+                            "name": {
+                                "value": "Saint Casimir",
+                                "synonyms": [
+                                    "Casimir"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsPerpetuaFelicity",
+                            "name": {
+                                "value": "Saints Perpetua and Felicity",
+                                "synonyms": [
+                                    "Perpetua and Felicity",
+                                    "Saint Perpetua",
+                                    "Saint Felicity"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnGod",
+                            "name": {
+                                "value": "Saint John of God",
+                                "synonyms": [
+                                    "John of God"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StFrancesRome",
+                            "name": {
+                                "value": "Saint Frances of Rome",
+                                "synonyms": [
+                                    "Frances of Rome"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPatrick",
+                            "name": {
+                                "value": "Saint Patrick",
+                                "synonyms": [
+                                    "Patrick"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCyrilJerusalem",
+                            "name": {
+                                "value": "Saint Cyril of Jerusalem",
+                                "synonyms": [
+                                    "Cyril of Jerusalem"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJoseph",
+                            "name": {
+                                "value": "Saint Joseph Husband of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Saint Joseph Spouse of the Blessed Virgin Mary",
+                                    "Saint Joseph Spouse of Mary",
+                                    "Joseph Husband of Mary",
+                                    "Joseph Spouse of Mary"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StTuribius",
+                            "name": {
+                                "value": "Saint Turibius of Mogrovejo",
+                                "synonyms": [
+                                    "Turibius of Mogrovejo",
+                                    "Saint Turibius",
+                                    "Turibius"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Annunciation",
+                            "name": {
+                                "value": "Annunciation of the Lord",
+                                "synonyms": [
+                                    "Annunciation"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StFrancisPaola",
+                            "name": {
+                                "value": "Saint Francis of Paola",
+                                "synonyms": [
+                                    "Francis of Paola"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StIsidore",
+                            "name": {
+                                "value": "Saint Isidore",
+                                "synonyms": [
+                                    "Isidore"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StVincentFerrer",
+                            "name": {
+                                "value": "Saint Vincent Ferrer",
+                                "synonyms": [
+                                    "Vincent Ferrer"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnBaptistDeLaSalle",
+                            "name": {
+                                "value": "Saint John Baptist de la Salle",
+                                "synonyms": [
+                                    "John Baptist de la Salle"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StStanislaus",
+                            "name": {
+                                "value": "Saint Stanislaus",
+                                "synonyms": [
+                                    "Stanislaus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMartinPope",
+                            "name": {
+                                "value": "Saint Martin the First",
+                                "synonyms": [
+                                    "Martin the First",
+                                    "Pope Saint Martin the First",
+                                    "Pope Saint Martin"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAnselm",
+                            "name": {
+                                "value": "Saint Anselm of Canterbury",
+                                "synonyms": [
+                                    "Anselm of Canterbury",
+                                    "Saint Anselm",
+                                    "Anselm"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StGeorge",
+                            "name": {
+                                "value": "Saint George",
+                                "synonyms": [
+                                    "George"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StFidelisSigmaringen",
+                            "name": {
+                                "value": "Saint Fidelis of Sigmaringen",
+                                "synonyms": [
+                                    "Fidelis of Sigmaringen",
+                                    "Saint Fidelis",
+                                    "Fidelis"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMarkEvangelist",
+                            "name": {
+                                "value": "Saint Mark the Evangelist",
+                                "synonyms": [
+                                    "Mark the Evangelist",
+                                    "Saint Mark",
+                                    "the Evangelist Mark",
+                                    "Mark"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPeterChanel",
+                            "name": {
+                                "value": "Saint Peter Chanel",
+                                "synonyms": [
+                                    "Peter Chanel"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCatherineSiena",
+                            "name": {
+                                "value": "Saint Catherine of Siena",
+                                "synonyms": [
+                                    "Catherine of Siena"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPiusV",
+                            "name": {
+                                "value": "Saint Pius the Fifth",
+                                "synonyms": [
+                                    "Pius the Fifth",
+                                    "Pope Saint Pius the Fifth",
+                                    "Pope Pius the Fifth"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJosephWorker",
+                            "name": {
+                                "value": "Saint Joseph the Worker",
+                                "synonyms": [
+                                    "Joseph the Worker"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAthanasius",
+                            "name": {
+                                "value": "Saint Athanasius",
+                                "synonyms": [
+                                    "Athanasius"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsPhilipJames",
+                            "name": {
+                                "value": "Saints Philip and James Apostles",
+                                "synonyms": [
+                                    "Saints Philip and James",
+                                    "Saint Philip the Apostle",
+                                    "the Apostle Philip",
+                                    "James the Lesser",
+                                    "James the Less",
+                                    "James the Minor",
+                                    "Philip and James Apostles"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsNereusAchilleus",
+                            "name": {
+                                "value": "Saints Nereus and Achilleus",
+                                "synonyms": [
+                                    "Nereus and Achilleus",
+                                    "Saint Nereus",
+                                    "Saint Achilleus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPancras",
+                            "name": {
+                                "value": "Saint Pancras",
+                                "synonyms": [
+                                    "Pancras"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMatthiasAp",
+                            "name": {
+                                "value": "Saint Matthias the Apostle",
+                                "synonyms": [
+                                    "Matthias the Apostle",
+                                    "the Apostle Matthias",
+                                    "Saint Matthias",
+                                    "Matthias"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnIPope",
+                            "name": {
+                                "value": "Saint John the First",
+                                "synonyms": [
+                                    "John the First",
+                                    "Pope Saint John the First",
+                                    "Pope John the First"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBernardineSiena",
+                            "name": {
+                                "value": "Saint Bernardine of Siena",
+                                "synonyms": [
+                                    "Saint Bernardine",
+                                    "Bernardine of Siena"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBedeVenerable",
+                            "name": {
+                                "value": "Saint Bede the Venerable",
+                                "synonyms": [
+                                    "Saint Bede",
+                                    "Bede the Venerable"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StGregoryVII",
+                            "name": {
+                                "value": "Saint Gregory the Seventh",
+                                "synonyms": [
+                                    "Gregory the Seventh",
+                                    "Pope Saint Gregory the Seventh",
+                                    "Pope Gregory the Seventh"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMaryMagdalenePazzi",
+                            "name": {
+                                "value": "Saint Mary Magdalene de Pazzi",
+                                "synonyms": [
+                                    "Mary Magdalene de Pazzi"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPhilipNeri",
+                            "name": {
+                                "value": "Saint Philip Neri",
+                                "synonyms": [
+                                    "Philip Neri"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAugustineCanterbury",
+                            "name": {
+                                "value": "Saint Augustine of Canterbury",
+                                "synonyms": [
+                                    "Augustine of Canterbury"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Visitation",
+                            "name": {
+                                "value": "Visitation of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Visitation of Mary",
+                                    "Visitation"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJustinMartyr",
+                            "name": {
+                                "value": "Saint Justin Martyr",
+                                "synonyms": [
+                                    "Justin Martyr"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsMarcellinusPeter",
+                            "name": {
+                                "value": "Saints Marcellinus and Peter",
+                                "synonyms": [
+                                    "Marcellinus and Peter",
+                                    "Saint Marcellinus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsCharlesLwanga",
+                            "name": {
+                                "value": "Saints Charles Lwanga and companions",
+                                "synonyms": [
+                                    "Charles Lwanga and companions",
+                                    "Saint Charles Lwanga",
+                                    "Charles Lwanga"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBoniface",
+                            "name": {
+                                "value": "Saint Boniface",
+                                "synonyms": [
+                                    "Boniface"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StNorbert",
+                            "name": {
+                                "value": "Saint Norbert",
+                                "synonyms": [
+                                    "Norbert"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StEphrem",
+                            "name": {
+                                "value": "Saint Ephrem",
+                                "synonyms": [
+                                    "Ephrem"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBarnabasAp",
+                            "name": {
+                                "value": "Saint Barnabas the Apostle",
+                                "synonyms": [
+                                    "Barnabas the Apostle",
+                                    "the Apostle Barnabas",
+                                    "Saint Barnabas",
+                                    "Barnabas"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAnthonyPadua",
+                            "name": {
+                                "value": "Saint Anthony of Padua",
+                                "synonyms": [
+                                    "Saint Anthony of Lisbon",
+                                    "Saint Anthony from Lisbon",
+                                    "Anthony of Padua"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StRomuald",
+                            "name": {
+                                "value": "Saint Romuald",
+                                "synonyms": [
+                                    "Romuald"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAloysiusGonzaga",
+                            "name": {
+                                "value": "Saint Aloysius Gonzaga",
+                                "synonyms": [
+                                    "Aloysius Gonzaga"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPaulinusNola",
+                            "name": {
+                                "value": "Saint Paulinus of Nola",
+                                "synonyms": [
+                                    "Paulinus of Nola",
+                                    "Saint Paulinus",
+                                    "Paulinus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsJohnFisherThomasMore",
+                            "name": {
+                                "value": "Saints John Fisher and Thomas More",
+                                "synonyms": [
+                                    "John Fisher",
+                                    "Thomas More",
+                                    "Saint John Fisher",
+                                    "Saint Thomas More"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "NativityJohnBaptist",
+                            "name": {
+                                "value": "Nativity of Saint John the Baptist",
+                                "synonyms": [
+                                    "Birth of Saint John the Baptist",
+                                    "Nativity of John the Baptist",
+                                    "Birth of John the Baptist"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCyrilAlexandria",
+                            "name": {
+                                "value": "Saint Cyril of Alexandria",
+                                "synonyms": [
+                                    "Cyril of Alexandria"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StIrenaeus",
+                            "name": {
+                                "value": "Saint Irenaeus",
+                                "synonyms": [
+                                    "Irenaeus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsPeterPaulAp",
+                            "name": {
+                                "value": "Saints Peter and Paul",
+                                "synonyms": [
+                                    "Peter and Paul",
+                                    "Saint Peter and Paul Apostles",
+                                    "the Apostles Peter and Paul"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "FirstMartyrsRome",
+                            "name": {
+                                "value": "First Martyrs of the Church of Rome",
+                                "synonyms": [
+                                    "First Martyrs",
+                                    "Protomartyrs"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StThomasAp",
+                            "name": {
+                                "value": "Saint Thomas the Apostle",
+                                "synonyms": [
+                                    "Thomas the Apostle",
+                                    "the Apostle Thomas"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StElizabethPortugal",
+                            "name": {
+                                "value": "Saint Elizabeth of Portugal",
+                                "synonyms": [
+                                    "Elizabeth of Portugal"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAnthonyZaccaria",
+                            "name": {
+                                "value": "Saint Anthony Zaccaria",
+                                "synonyms": [
+                                    "Anthony Zaccaria"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMariaGoretti",
+                            "name": {
+                                "value": "Saint Maria Goretti",
+                                "synonyms": [
+                                    "Maria Goretti"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBenedict",
+                            "name": {
+                                "value": "Saint Benedict",
+                                "synonyms": [
+                                    "Benedict"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StHenry",
+                            "name": {
+                                "value": "Saint Henry",
+                                "synonyms": [
+                                    "Henry"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCamillusDeLellis",
+                            "name": {
+                                "value": "Saint Camillus de Lellis",
+                                "synonyms": [
+                                    "Camillus de Lellis",
+                                    "Saint Camillus",
+                                    "Camillus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBonaventure",
+                            "name": {
+                                "value": "Saint Bonaventure",
+                                "synonyms": [
+                                    "Bonaventure"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "LadyMountCarmel",
+                            "name": {
+                                "value": "Our Lady of Mount Carmel",
+                                "synonyms": [
+                                    "Mount Carmel",
+                                    "Our Lady of Carmel"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLawrenceBrindisi",
+                            "name": {
+                                "value": "Saint Lawrence of Brindisi",
+                                "synonyms": [
+                                    "Lawrence of Brindisi"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMaryMagdalene",
+                            "name": {
+                                "value": "Saint Mary Magdalene",
+                                "synonyms": [
+                                    "Mary Magdalene"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBridget",
+                            "name": {
+                                "value": "Saint Bridget",
+                                "synonyms": [
+                                    "Bridget"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJamesAp",
+                            "name": {
+                                "value": "Saint James the Apostle",
+                                "synonyms": [
+                                    "Saint James",
+                                    "Saint James the Greater",
+                                    "Saint James the Major",
+                                    "James the Apostle",
+                                    "the Apostle James"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsJoachimAnne",
+                            "name": {
+                                "value": "Saints Joachim and Anne",
+                                "synonyms": [
+                                    "Saint Anne",
+                                    "Saint Ann",
+                                    "Saint Joachim",
+                                    "Joachim and Anne"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMartha",
+                            "name": {
+                                "value": "Saint Martha",
+                                "synonyms": [
+                                    "Martha"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPeterChrysologus",
+                            "name": {
+                                "value": "Saint Peter Chrysologus",
+                                "synonyms": [
+                                    "Peter Chrysologus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StIgnatiusLoyola",
+                            "name": {
+                                "value": "Saint Ignatius of Loyola",
+                                "synonyms": [
+                                    "Ignatius of Loyola"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAlphonsusMariaDeLiguori",
+                            "name": {
+                                "value": "Saint Alphonsus Maria de Liguori",
+                                "synonyms": [
+                                    "Alphonsus Maria de Liguori",
+                                    "Saint Alphonse of Liguori",
+                                    "Saint Alphonse",
+                                    "Alphonse of Liguori",
+                                    "Alphonse"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StEusebius",
+                            "name": {
+                                "value": "Saint Eusebius of Vercelli",
+                                "synonyms": [
+                                    "Saint Eusebius",
+                                    "Eusebius of Vercelli",
+                                    "Eusebius"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJeanVianney",
+                            "name": {
+                                "value": "Saint Jean Vianney",
+                                "synonyms": [
+                                    "the Curé of Ars",
+                                    "Saint John Vianney",
+                                    "Jean Vianney"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "DedicationStMaryMajor",
+                            "name": {
+                                "value": "Dedication of the Basilica of Saint Mary Major",
+                                "synonyms": [
+                                    "Dedication of Saint Mary Major",
+                                    "Saint Mary Major"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Transfiguration",
+                            "name": {
+                                "value": "Transfiguration of the Lord",
+                                "synonyms": [
+                                    "Transfiguration"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StSixtusIIPope",
+                            "name": {
+                                "value": "Saint Sixtus the Second",
+                                "synonyms": [
+                                    "Sixtus the Second",
+                                    "Pope Saint Sixtus the Second",
+                                    "Pope Saint Sixtus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCajetan",
+                            "name": {
+                                "value": "Saint Cajetan",
+                                "synonyms": [
+                                    "Cajetan"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StDominic",
+                            "name": {
+                                "value": "Saint Dominic",
+                                "synonyms": [
+                                    "Dominic"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLawrenceDeacon",
+                            "name": {
+                                "value": "Saint Lawrence",
+                                "synonyms": [
+                                    "Lawrence"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StClare",
+                            "name": {
+                                "value": "Saint Clare",
+                                "synonyms": [
+                                    "Clare"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJaneFrancesDeChantal",
+                            "name": {
+                                "value": "Saint Jane Frances de Chantal",
+                                "synonyms": [
+                                    "Jane Frances de Chantal"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsPontianHippolytus",
+                            "name": {
+                                "value": "Saints Pontian and Hippolytus",
+                                "synonyms": [
+                                    "Pontian and Hippolytus",
+                                    "Saint Pontian",
+                                    "Pontian",
+                                    "Saint Hippolytus",
+                                    "Hippolytus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Assumption",
+                            "name": {
+                                "value": "Assumption of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Assumption of Mary",
+                                    "Assumption"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StStephenHungary",
+                            "name": {
+                                "value": "Saint Stephen of Hungary",
+                                "synonyms": [
+                                    "Stephen of Hungary"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnEudes",
+                            "name": {
+                                "value": "Saint John Eudes",
+                                "synonyms": [
+                                    "John Eudes"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBernardClairvaux",
+                            "name": {
+                                "value": "Saint Bernard of Clairvaux",
+                                "synonyms": [
+                                    "Saint Bernard",
+                                    "Bernard of Clairvaux"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPiusX",
+                            "name": {
+                                "value": "Saint Pius the Tenth",
+                                "synonyms": [
+                                    "Pius the Tenth",
+                                    "Pope Saint Pius the Tenth",
+                                    "Pope Pius the Tenth"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "QueenshipMary",
+                            "name": {
+                                "value": "Queenship of Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Queenship of Mary",
+                                    "Queenship"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StRoseLima",
+                            "name": {
+                                "value": "Saint Rose of Lima",
+                                "synonyms": [
+                                    "Rose of Lima",
+                                    "Saint Rose",
+                                    "Rose"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBartholomewAp",
+                            "name": {
+                                "value": "Saint Bartholomew the Apostle",
+                                "synonyms": [
+                                    "Bartholomew the Apostle",
+                                    "the Apostle Bartholomew"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLouis",
+                            "name": {
+                                "value": "Saint Louis",
+                                "synonyms": [
+                                    "Louis"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJosephCalasanz",
+                            "name": {
+                                "value": "Saint Joseph Calasanz",
+                                "synonyms": [
+                                    "Joseph Calasanz"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMonica",
+                            "name": {
+                                "value": "Saint Monica",
+                                "synonyms": [
+                                    "Monica"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAugustineHippo",
+                            "name": {
+                                "value": "Saint Augustine of Hippo",
+                                "synonyms": [
+                                    "Augustine of Hippo",
+                                    "Saint Augustine",
+                                    "Augustine"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "BeheadingJohnBaptist",
+                            "name": {
+                                "value": "The Beheading of Saint John the Baptist",
+                                "synonyms": [
+                                    "Martyrdom of Saint John the Baptist",
+                                    "Martyrdom of John the Baptist",
+                                    "Beheading of John the Baptist"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StGregoryGreat",
+                            "name": {
+                                "value": "Saint Gregory the Great",
+                                "synonyms": [
+                                    "Gregory the Great",
+                                    "Pope Saint Gregory the Great",
+                                    "Pope Gregory the Great"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "NativityVirginMary",
+                            "name": {
+                                "value": "Nativity of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Nativity of Mary",
+                                    "Birth of Mary",
+                                    "Birth of the Blessed Virgin Mary",
+                                    "Birth of the Virgin",
+                                    "Birth of the Virgin Mary"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnChrysostom",
+                            "name": {
+                                "value": "Saint John Chrysostom",
+                                "synonyms": [
+                                    "John Chrysostom"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ExaltationCross",
+                            "name": {
+                                "value": "Exaltation of the Holy Cross"
+                            }
+                        },
+                        {
+                            "id": "LadySorrows",
+                            "name": {
+                                "value": "Our Lady of Sorrows"
+                            }
+                        },
+                        {
+                            "id": "StsCorneliusCyprian",
+                            "name": {
+                                "value": "Saints Cornelius and Cyprian",
+                                "synonyms": [
+                                    "Cornelius and Cyprian",
+                                    "Saint Cornelius",
+                                    "Saint Cyprian",
+                                    "Cornelius",
+                                    "Cyprian"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StRobertBellarmine",
+                            "name": {
+                                "value": "Saint Robert Bellarmine",
+                                "synonyms": [
+                                    "Robert Bellarmine"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJanuarius",
+                            "name": {
+                                "value": "Saint Januarius",
+                                "synonyms": [
+                                    "Januarius"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMatthewEvangelist",
+                            "name": {
+                                "value": "Saint Matthew the Evangelist",
+                                "synonyms": [
+                                    "Saint Matthew",
+                                    "Matthew the Evangelist",
+                                    "the Evangelist Matthew"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsCosmasDamian",
+                            "name": {
+                                "value": "Saints Cosmas and Damian",
+                                "synonyms": [
+                                    "Cosmas and Damian",
+                                    "Saint Cosmas",
+                                    "Saint Damian",
+                                    "Cosmas",
+                                    "Damian"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StVincentDePaul",
+                            "name": {
+                                "value": "Saint Vincent de Paul",
+                                "synonyms": [
+                                    "Vincent de Paul"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StWenceslaus",
+                            "name": {
+                                "value": "Saint Wenceslaus",
+                                "synonyms": [
+                                    "Wenceslaus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsArchangels",
+                            "name": {
+                                "value": "Saints Michael Gabriel and Raphael Archangels",
+                                "synonyms": [
+                                    "Saint Michael",
+                                    "Saint Gabriel",
+                                    "Saint Raphael",
+                                    "Archangels",
+                                    "Saint Michael the Archangel",
+                                    "Michael Gabriel and Raphael",
+                                    "Michael",
+                                    "Gabriel",
+                                    "Raphael"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJerome",
+                            "name": {
+                                "value": "Saint Jerome",
+                                "synonyms": [
+                                    "Jerome"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StThereseChildJesus",
+                            "name": {
+                                "value": "Saint Thérèse of the Child Jesus",
+                                "synonyms": [
+                                    "Thérèse of the Child Jesus",
+                                    "Saint Thérèse of Lisieux",
+                                    "Thérèse of Lisieux"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "GuardianAngels",
+                            "name": {
+                                "value": "Guardian Angels"
+                            }
+                        },
+                        {
+                            "id": "StFrancisAssisi",
+                            "name": {
+                                "value": "Saint Francis of Assisi",
+                                "synonyms": [
+                                    "Francis of Assisi",
+                                    "Saint Francis",
+                                    "Francis"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StBruno",
+                            "name": {
+                                "value": "Saint Bruno",
+                                "synonyms": [
+                                    "Bruno"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "LadyRosary",
+                            "name": {
+                                "value": "Our Lady of the Rosary"
+                            }
+                        },
+                        {
+                            "id": "StDenis",
+                            "name": {
+                                "value": "Saint Denis",
+                                "synonyms": [
+                                    "Denis"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnLeonardi",
+                            "name": {
+                                "value": "Saint John Leonardi",
+                                "synonyms": [
+                                    "John Leonardi"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCallistusIPope",
+                            "name": {
+                                "value": "Saint Callistus the First",
+                                "synonyms": [
+                                    "Callistus the First",
+                                    "Pope Callistus the First",
+                                    "Pope Saint Callistus the First"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StTeresaJesus",
+                            "name": {
+                                "value": "Saint Teresa of Jesus",
+                                "synonyms": [
+                                    "Teresa of Jesus",
+                                    "Saint Teresa of Avila",
+                                    "Teresa of Avila"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StHedwig",
+                            "name": {
+                                "value": "Saint Hedwig",
+                                "synonyms": [
+                                    "Hedwig"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMargaretAlacoque",
+                            "name": {
+                                "value": "Saint Margaret Mary Alacoque",
+                                "synonyms": [
+                                    "Margaret Mary Alacoque"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StIgnatiusAntioch",
+                            "name": {
+                                "value": "Saint Ignatius of Antioch",
+                                "synonyms": [
+                                    "Ignatius of Antioch"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLukeEvangelist",
+                            "name": {
+                                "value": "Saint Luke the Evangelist",
+                                "synonyms": [
+                                    "Saint Luke",
+                                    "Luke the Evangelist",
+                                    "the Evangelist Luke"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsJeanBrebeuf",
+                            "name": {
+                                "value": "Saints John de Brébeuf and Isaac Jogues",
+                                "synonyms": [
+                                    "John de Brébeuf and Isaac Jogues",
+                                    "John de Brébeuf",
+                                    "Isaac Jogues",
+                                    "North american martyrs"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPaulCross",
+                            "name": {
+                                "value": "Saint Paul of the Cross",
+                                "synonyms": [
+                                    "Paul of the Cross"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnCapistrano",
+                            "name": {
+                                "value": "Saint John of Capistrano",
+                                "synonyms": [
+                                    "John of Capistrano",
+                                    "Saint John Capistrano",
+                                    "John Capistrano",
+                                    "John Capistran"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAnthonyMaryClaret",
+                            "name": {
+                                "value": "Saint Anthony Mary Claret",
+                                "synonyms": [
+                                    "Anthony Mary Claret",
+                                    "Saint Anthony Claret",
+                                    "Anthony Claret"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StSimonStJudeAp",
+                            "name": {
+                                "value": "Saints Simon and Jude Apostles",
+                                "synonyms": [
+                                    "Saint Simon and Saint Jude",
+                                    "Saints Simon and Jude",
+                                    "Simon and Jude Apostles",
+                                    "Simon and Jude",
+                                    "Saint Jude the Apostle",
+                                    "Saint Jude",
+                                    "Saint Simon the Apostle",
+                                    "Saint Simon",
+                                    "the Apostles Simon and Jude",
+                                    "the Apostle Simon",
+                                    "the Apostle Jude"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "AllSaints",
+                            "name": {
+                                "value": "All Saints Day",
+                                "synonyms": [
+                                    "All Saints"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "AllSouls",
+                            "name": {
+                                "value": "Commemoration of all the Faithful Departed",
+                                "synonyms": [
+                                    "All Souls' Day",
+                                    "Commemoration of the faithful departed",
+                                    "All Souls"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMartinPorres",
+                            "name": {
+                                "value": "Saint Martin de Porres",
+                                "synonyms": [
+                                    "Martin de Porres"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCharlesBorromeo",
+                            "name": {
+                                "value": "Saint Charles Borromeo",
+                                "synonyms": [
+                                    "Charles Borromeo"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "DedicationLateran",
+                            "name": {
+                                "value": "Dedication of the Lateran basilica",
+                                "synonyms": [
+                                    "Dedication of the Lateran",
+                                    "Saint John Lateran",
+                                    "Lateran Basilica",
+                                    "Basilica of Saint John Lateran"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLeoGreat",
+                            "name": {
+                                "value": "Saint Leo the Great",
+                                "synonyms": [
+                                    "Leo the Great",
+                                    "Pope Saint Leo the Great",
+                                    "Pope Leo the Great"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMartinTours",
+                            "name": {
+                                "value": "Saint Martin of Tours",
+                                "synonyms": [
+                                    "Martin of Tours"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJosaphat",
+                            "name": {
+                                "value": "Saint Josaphat",
+                                "synonyms": [
+                                    "Josaphat"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAlbertGreat",
+                            "name": {
+                                "value": "Saint Albert the Great",
+                                "synonyms": [
+                                    "Albert the Great",
+                                    "Saint Albert",
+                                    "Albert"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMargaretScotland",
+                            "name": {
+                                "value": "Saint Margaret of Scotland",
+                                "synonyms": [
+                                    "Margaret of Scotland"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StGertrudeGreat",
+                            "name": {
+                                "value": "Saint Gertrude the Great",
+                                "synonyms": [
+                                    "Gertrude the Great",
+                                    "Saint Gertrude",
+                                    "Gertrude"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StElizabethHungary",
+                            "name": {
+                                "value": "Saint Elizabeth of Hungary",
+                                "synonyms": [
+                                    "Elizabeth of Hungary"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "DedicationStsPeterPaul",
+                            "name": {
+                                "value": "Dedication of the basilicas of Saints Peter and Paul"
+                            }
+                        },
+                        {
+                            "id": "PresentationMary",
+                            "name": {
+                                "value": "Presentation of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Presentation of Mary"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCecilia",
+                            "name": {
+                                "value": "Saint Cecilia",
+                                "synonyms": [
+                                    "Cecilia"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StClementIPope",
+                            "name": {
+                                "value": "Saint Clement the First",
+                                "synonyms": [
+                                    "Clement the First",
+                                    "Pope Saint Clement the First",
+                                    "Pope Clement the First",
+                                    "Pope Clement",
+                                    "Saint Clement"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StColumban",
+                            "name": {
+                                "value": "Saint Columban",
+                                "synonyms": [
+                                    "Columban"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAndrewAp",
+                            "name": {
+                                "value": "Saint Andrew the Apostle",
+                                "synonyms": [
+                                    "Andrew the Apostle",
+                                    "the Apostle Andrew"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StFrancisXavier",
+                            "name": {
+                                "value": "Saint Francis Xavier",
+                                "synonyms": [
+                                    "Francis Xavier"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnDamascene",
+                            "name": {
+                                "value": "Saint John Damascene",
+                                "synonyms": [
+                                    "John Damascene"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StNicholas",
+                            "name": {
+                                "value": "Saint Nicholas",
+                                "synonyms": [
+                                    "Nicholas"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAmbrose",
+                            "name": {
+                                "value": "Saint Ambrose",
+                                "synonyms": [
+                                    "Ambrose"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "ImmaculateConception",
+                            "name": {
+                                "value": "Immaculate Conception of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Immaculate Conception of Mary",
+                                    "Immaculate Conception"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StDamasusIPope",
+                            "name": {
+                                "value": "Saint Damasus the First",
+                                "synonyms": [
+                                    "Damasus the First",
+                                    "Pope Saint Damasus the First",
+                                    "Pope Damasus the First",
+                                    "Saint Damasus",
+                                    "Damasus",
+                                    "Pope Damasus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLucySyracuse",
+                            "name": {
+                                "value": "Saint Lucy of Syracuse",
+                                "synonyms": [
+                                    "Lucy of Syracuse",
+                                    "Saint Lucy",
+                                    "Lucy"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnCross",
+                            "name": {
+                                "value": "Saint John of the Cross",
+                                "synonyms": [
+                                    "John of the Cross"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPeterCanisius",
+                            "name": {
+                                "value": "Saint Peter Canisius",
+                                "synonyms": [
+                                    "Peter Canisius"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnKanty",
+                            "name": {
+                                "value": "Saint John of Kanty",
+                                "synonyms": [
+                                    "John of Kanty"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StStephenProtomartyr",
+                            "name": {
+                                "value": "Saint Stephen",
+                                "synonyms": [
+                                    "Stephen"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJohnEvangelist",
+                            "name": {
+                                "value": "Saint John the Evangelist",
+                                "synonyms": [
+                                    "Saint John the Apostle",
+                                    "the Apostle John",
+                                    "John the Evangelist",
+                                    "the Evangelist John"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HolyInnocents",
+                            "name": {
+                                "value": "Holy Innocents"
+                            }
+                        },
+                        {
+                            "id": "StThomasBecket",
+                            "name": {
+                                "value": "Saint Thomas Becket",
+                                "synonyms": [
+                                    "Thomas Becket"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StSylvesterIPope",
+                            "name": {
+                                "value": "Saint Sylvester the First",
+                                "synonyms": [
+                                    "Sylvester the First",
+                                    "Pope Saint Sylvester",
+                                    "Sylvester",
+                                    "Saint Sylvester"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "NameJesus",
+                            "name": {
+                                "value": "The Most Holy Name of Jesus",
+                                "synonyms": [
+                                    "Holy Name of Jesus",
+                                    "Name of Jesus"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StJosephineBakhita",
+                            "name": {
+                                "value": "Saint Josephine Bakhita virgin",
+                                "synonyms": [
+                                    "Josephine Bakhita"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAdalbert",
+                            "name": {
+                                "value": "Saint Adalbert bishop and martyr",
+                                "synonyms": [
+                                    "Adalbert bishop and martyr",
+                                    "Saint Adalbert",
+                                    "Adalbert"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StLouisGrignionMontfort",
+                            "name": {
+                                "value": "Saint Louis Grignion de Montfort",
+                                "synonyms": [
+                                    "Louis Grignion de Montfort",
+                                    "Saint Louis de Montfort",
+                                    "Louis de Montfort"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "LadyFatima",
+                            "name": {
+                                "value": "Our Lady of Fatima"
+                            }
+                        },
+                        {
+                            "id": "StChristopherMagallanes",
+                            "name": {
+                                "value": "Saint Christopher Magallanes and companions martyrs",
+                                "synonyms": [
+                                    "Christopher Magallanes and companions martyrs",
+                                    "Saint Christopher Magallanes",
+                                    "Christopher Magallanes"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StRitaCascia",
+                            "name": {
+                                "value": "Saint Rita of Cascia",
+                                "synonyms": [
+                                    "Rita of Cascia",
+                                    "Saint Rita",
+                                    "Rita"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAugustineZhaoRong",
+                            "name": {
+                                "value": "Saint Augustine Zhao Rong and companions martyrs",
+                                "synonyms": [
+                                    "Augustine Zhao Rong and companions martyrs",
+                                    "Saint Augustine Zhao Rong",
+                                    "Augustine Zhao Rong"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StApollinaris",
+                            "name": {
+                                "value": "Saint Apollinaris bishop and martyr",
+                                "synonyms": [
+                                    "Apollinaris bishop and martyr",
+                                    "Saint Apollinaris",
+                                    "Apollinaris"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StSharbelMakhluf",
+                            "name": {
+                                "value": "Saint Sharbel Makhluf",
+                                "synonyms": [
+                                    "Sharbel Makhluf"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPeterJulianEymard",
+                            "name": {
+                                "value": "Saint Peter Julian Eymard",
+                                "synonyms": [
+                                    "Peter Julian Eymard"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StEdithStein",
+                            "name": {
+                                "value": "Saint Teresa Benedicta of the Cross",
+                                "synonyms": [
+                                    "Teresa Benedicta of the Cross",
+                                    "Saint Edith Stein",
+                                    "Edith Stein"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StMaximilianKolbe",
+                            "name": {
+                                "value": "Saint Maximilian Mary Kolbe",
+                                "synonyms": [
+                                    "Maximilian Mary Kolbe",
+                                    "Saint Maximilian Kolbe",
+                                    "Saint Maximilian",
+                                    "Maximilian Kolbe"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPeterClaver",
+                            "name": {
+                                "value": "Saint Peter Claver",
+                                "synonyms": [
+                                    "Peter Claver"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HolyNameMary",
+                            "name": {
+                                "value": "Holy Name of the Blessed Virgin Mary",
+                                "synonyms": [
+                                    "Holy Name of Mary",
+                                    "Name of Mary"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAndrewKimTaegon",
+                            "name": {
+                                "value": "Saint Andrew Kim Taegon and Paul Chong Hasang and companions martyrs",
+                                "synonyms": [
+                                    "Andrew Kim Taegon and Paul Chong Hasang",
+                                    "Saint Andrew Kim Taegon",
+                                    "Saint Paul Chong Hasang"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StsLawrenceRuiz",
+                            "name": {
+                                "value": "Saints Lawrence Ruiz and companions martyrs",
+                                "synonyms": [
+                                    "Saint Lawrence Ruiz",
+                                    "Lawrence Ruiz"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StAndrewDungLac",
+                            "name": {
+                                "value": "Saint Andrew Dung-Lac and companions martyrs",
+                                "synonyms": [
+                                    "Saint Andrew Dung-Lac",
+                                    "Andrew Dung-Lac"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StCatherineAlexandria",
+                            "name": {
+                                "value": "Saint Catherine of Alexandria virgin and martyr",
+                                "synonyms": [
+                                    "Saint Catherine of Alexandria",
+                                    "Catherine of Alexandria"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "StPioPietrelcina",
+                            "name": {
+                                "value": "Saint Pius of Pietrelcina",
+                                "synonyms": [
+                                    "Padre Pio"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "LadyGuadalupe",
+                            "name": {
+                                "value": "Our Lady of Guadalupe"
+                            }
+                        },
+                        {
+                            "id": "JuanDiego",
+                            "name": {
+                                "value": "Saint Juan Diego Cuauhtlatoatzin",
+                                "synonyms": [
+                                    "Saint Juan Diego",
+                                    "Juan Diego"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "FESTIVITY_RANK",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "optional memorial"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "solemnity"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "feast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "memorial"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
