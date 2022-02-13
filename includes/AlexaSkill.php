@@ -161,21 +161,33 @@ class AlexaSkill {
         $spokenText = $mainText;
         if( $this->LitLocale === LitLocale::ENGLISH ) {
             if ( stripos( $mainText, 'Angela Merici' ) ) {
-                $spokenText = str_replace( 'Angela Merici', "<lang xml:lang=\"it-IT\">Angela Merici</lang>", $mainText );
+                $spokenText = str_replace( 'Angela Merici', "<lang xml:lang=\"it-IT\">Angela Merici</lang>", $spokenText );
             }
             if( stripos( $mainText, 'Blessed') ) {
-                $spokenText = str_ireplace( 'Blessed', "<phoneme alphabet=\"ipa\" ph=\"ˈblesɪd\">Blessed</phoneme>", $mainText );
+                $spokenText = str_ireplace( 'Blessed', "<phoneme alphabet=\"ipa\" ph=\"ˈblesɪd\">Blessed</phoneme>", $spokenText );
+            }
+            if( stripos( $mainText, 'Lateran' ) ) {
+                $spokenText = str_ireplace( 'Lateran', "<phoneme alphabet=\"ipa\" ph=\"lætɚɹ̩ən\">Lateran</phoneme>", $spokenText );
+            }
+            if( stripos( $mainText, 'Dedication' ) ) {
+                $spokenText = str_ireplace( 'Dedication', 'the Dedication', $spokenText );
             }
         }
         if( $this->LitLocale === LitLocale::ITALIAN ) {
-            $this->log[] = "We have detected an Italian request";
             if( stripos( $mainText, 'Domenica' ) && preg_match('/\b([IVXLCDM]+) Domenica/', $mainText, $matches) ) {
-                $this->log[] = "We have detected a Sunday string with a Roman numeral: |{$matches[1]}|";
                 $ordinal = ucfirst( $this->spelloutOrdFmt->format( $this->RomanNumeralToArabic($matches[1]) ) );
-                $this->log[] = "The ordinal form of the roman numeral: $ordinal";
-                $spokenText = preg_replace('/\b([IVXLCDM]+) Domenica/', $ordinal . ' Domenica', $mainText );
-                $this->log[] = "spokenText is now: $spokenText";
+                $spokenText = preg_replace('/\b([IVXLCDM]+) Domenica/', $ordinal . ' Domenica', $spokenText );
             }
+            if( stripos( $mainText, 'di Dedicazione' ) ) {
+                $spokenText = str_ireplace( 'di Dedicazione', 'della Dedicazione', $spokenText );
+            }
+        }
+
+        if( stripos( $mainText, '1970' ) && stripos( $mainText, '9999' ) ) {
+            $spokenText = str_ireplace( '1970', '<say-as interpret-as="date" format="y">1970</say-as>', $spokenText);
+            $spokenText = str_ireplace( '9999', '<say-as interpret-as="date" format="y">9999</say-as>', $spokenText);
+            //let's also try to replace the year that was being asked...
+            $spokenText = preg_replace('/ ([1-9][0-9]*)\./', ' <say-as interpret-as="date" format="y">$1</say-as>.', $spokenText );
         }
         return $spokenText;
     }
@@ -223,82 +235,98 @@ class AlexaSkill {
                             $queryArray = [];
                             $queryArray[ "locale" ] = $this->LitLocale;
                             $queryArray[ "nationalcalendar" ] = $this->Region;
+                            $skipToTheEnd = false;
                             if( $year !== null && $year === 0 ) {
                                 $titleText = _( 'Catholic Liturgy is confused.' );
                                 $mainText = _( 'I am terribly sorry, but it seems like you are asking about a year, and I simply did not understand what year you were asking about. Could you perhaps ask again?' );
+                                $skipToTheEnd = true;
                             }
-                            else if( $year !== null && $year >= 1969 && $year <= 9999 ) {
-                                $queryArray[ "year" ] = $year;
-                            }
-                            $this->sendAPIRequest( $queryArray );
-                            $LitCal = $this->LitCalData["LitCal"];
-                            if( isset( $LitCal[$fest] ) ) {
-                                $festivity = new Festivity( $LitCal[$fest] );
-                                $titleText = sprintf(
-                                    _( 'Date of %1$s in the year %2$d' ),
-                                    $festivity->name,
+                            else if( $year !== null && ( $year <= 1969 || $year > 9999 ) ) {
+                                $titleText = _( 'Catholic Liturgy is desolate.' );
+                                $mainText = sprintf(
+                                    _( 'I am quite sorry, but it seems that you are asking about the year %1$d. I don\'t really have much to tell you about this year. Perhaps ask about a year in the range 1970 to 9999?' ),
                                     $year
                                 );
-                                $formattedDate = $this->dowMonthDayFmt->format( $festivity->date->format( 'U' ) );
-                                if( $this->LitLocale === LitLocale::ENGLISH ) {
-                                    $formattedDate .= $this->ordFmt->format( $festivity->date->format( 'j' ) );
-                                }
-                                if( $festivity->grade === LitGrade::HIGHER_SOLEMNITY ) {
-                                    if( $year > $this->currentYear ) {
-                                        $message = _( '%1$s falls on %2$s in the year %3$d.' );
-                                    }
-                                    else if( $year === $this->currentYear ) {
-                                        $message = _( 'This year %1$s falls on %2$s.' );
-                                    }
-                                    else {
-                                        $message = _( '%1$s fell on %2$s in the year %3$d.' );
-                                    }
-                                    $mainText = sprintf(
-                                        $message,
-                                        $festivity->name,
-                                        $formattedDate,
-                                        $year
-                                    ); 
-                                } else {
-                                    $festivityGrade = $festivity->displayGrade != "" ? $festivity->displayGrade : $this->LitGrade->i18n( $festivity->grade );
-                                    if( $year > $this->currentYear ) {
-                                        $message = _( 'The %1$s: %2$s, falls on %3$s in the year %4$d.' );
-                                    }
-                                    else if( $year === $this->currentYear ) {
-                                        $message = _( 'This year, the %1$s: %2$s, falls on %3$s.' );
-                                    }
-                                    else {
-                                        $message = _( 'The %1$s: %2$s, fell on %3$s in the year %4$d.' );
-                                    }
-                                    $mainText = sprintf(
-                                        $message,
-                                        $festivityGrade,
-                                        $festivity->name,
-                                        $formattedDate,
-                                        $year
-                                    );
-                                }
+                                $skipToTheEnd = true;
                             }
-                            else if ( $this->litCalMessagesExist( $festName ) ) {
-                                $messages = [];
-                                foreach( $this->LitCalData["Messages"] as $message ) {
-                                    if( strpos( $message, $festName ) ) {
-                                        $messages[] = strip_tags( $message );
-                                    }
-                                }
-                                $titleText = sprintf( _( 'What happened to %1$s in %2$d' ), $slots->festivity->value, $year );
-                                $mainText = sprintf(
-                                    _( 'Catholic Liturgy gathered the following information about %s:' ),
-                                    $festName
-                                );
-                                $mainText .= ' ' . implode(' ', $messages );
+                            else if( $year !== null && $year > 1969 && $year <= 9999 ) {
+                                $queryArray[ "year" ] = $year;
                             }
                             else {
-                                $titleText = _( 'Catholic Liturgy is confused.' );
-                                $mainText = sprintf(
-                                    _( 'Sorry, I could not find any information about %s.' ),
-                                    $slots->festivity->value
-                                );
+                                $skipToTheEnd = false;
+                                //basically we won't ask for any specific year, and will get information about the current year
+                            }
+                            if( $skipToTheEnd === false ) {
+                                $this->sendAPIRequest( $queryArray );
+                                $LitCal = $this->LitCalData["LitCal"];
+                                if( isset( $LitCal[$fest] ) ) {
+                                    $festivity = new Festivity( $LitCal[$fest] );
+                                    $titleText = sprintf(
+                                        _( 'Date of %1$s in the year %2$d' ),
+                                        $festivity->name,
+                                        $year
+                                    );
+                                    $formattedDate = $this->dowMonthDayFmt->format( $festivity->date->format( 'U' ) );
+                                    if( $this->LitLocale === LitLocale::ENGLISH ) {
+                                        $formattedDate .= $this->ordFmt->format( $festivity->date->format( 'j' ) );
+                                    }
+                                    if( $festivity->grade === LitGrade::HIGHER_SOLEMNITY ) {
+                                        if( $year > $this->currentYear ) {
+                                            $message = _( '%1$s falls on %2$s in the year %3$d.' );
+                                        }
+                                        else if( $year === $this->currentYear ) {
+                                            $message = _( 'This year %1$s falls on %2$s.' );
+                                        }
+                                        else {
+                                            $message = _( '%1$s fell on %2$s in the year %3$d.' );
+                                        }
+                                        $mainText = sprintf(
+                                            $message,
+                                            $festivity->name,
+                                            $formattedDate,
+                                            $year
+                                        ); 
+                                    } else {
+                                        $festivityGrade = $festivity->displayGrade != "" ? $festivity->displayGrade : $this->LitGrade->i18n( $festivity->grade );
+                                        if( $year > $this->currentYear ) {
+                                            $message = _( 'The %1$s: %2$s, falls on %3$s in the year %4$d.' );
+                                        }
+                                        else if( $year === $this->currentYear ) {
+                                            $message = _( 'This year, the %1$s: %2$s, falls on %3$s.' );
+                                        }
+                                        else {
+                                            $message = _( 'The %1$s: %2$s, fell on %3$s in the year %4$d.' );
+                                        }
+                                        $mainText = sprintf(
+                                            $message,
+                                            $festivityGrade,
+                                            $festivity->name,
+                                            $formattedDate,
+                                            $year
+                                        );
+                                    }
+                                }
+                                else if ( $this->litCalMessagesExist( $festName ) ) {
+                                    $messages = [];
+                                    foreach( $this->LitCalData["Messages"] as $message ) {
+                                        if( strpos( $message, $festName ) ) {
+                                            $messages[] = strip_tags( $message );
+                                        }
+                                    }
+                                    $titleText = sprintf( _( 'What happened to %1$s in %2$d' ), $slots->festivity->value, $year );
+                                    $mainText = sprintf(
+                                        _( 'Catholic Liturgy gathered the following information about %s:' ),
+                                        $festName
+                                    );
+                                    $mainText .= ' ' . implode(' ', $messages );
+                                }
+                                else {
+                                    $titleText = _( 'Catholic Liturgy is confused.' );
+                                    $mainText = sprintf(
+                                        _( 'Sorry, I could not find any information about %s.' ),
+                                        $slots->festivity->value
+                                    );
+                                }
                             }
                             $spokenText = $this->getSpokenText( $mainText );
                             $alexaResponse = new AlexaResponse( false );
@@ -316,10 +344,12 @@ class AlexaSkill {
                                 )
                                 ||
                                 (
+                                    property_exists( $slots, 'today' ) &&
                                     property_exists( $slots->today, 'value' )
                                 )
                             ) {
                                 if(
+                                    property_exists( $slots, 'today' ) &&
                                     property_exists( $slots->today, 'resolutions' ) &&
                                     property_exists( $slots->today->resolutions, 'resolutionsPerAuthority' ) &&
                                     property_exists( $slots->today->resolutions->resolutionsPerAuthority[0], 'values' ) &&
@@ -336,9 +366,17 @@ class AlexaSkill {
                                 $queryArray[ "locale" ] = $this->LitLocale;
                                 $queryArray[ "nationalcalendar" ] = $this->Region;
                                 $queryArray[ "year" ] = $date->format('Y');
-                                $this->sendAPIRequest( $queryArray );
-                                $timestamp = $date->format('U');
-                                [ $titleText, $mainText ] = $this->filterEventsForDate( $timestamp );
+                                if( $queryArray[ "year" ] < 1970 || $queryArray[ "year" ] > 9999 ) {
+                                    $titleText = _( 'Catholic Liturgy is desolate.' );
+                                    $mainText = sprintf(
+                                        _( 'I am quite sorry, but it seems that you are asking about the year %1$d. I\'m afraid I don\'t really have much to tell you about this year. Perhaps ask about a year in the range 1970 to 9999?' ),
+                                        $queryArray[ "year" ]
+                                    );
+                                } else {
+                                    $this->sendAPIRequest( $queryArray );
+                                    $timestamp = $date->format('U');
+                                    [ $titleText, $mainText ] = $this->filterEventsForDate( $timestamp );
+                                }
                             } else {
                                 $titleText = _( 'Catholic Liturgy is confused.' );
                                 $mainText = _( 'I am terribly sorry, but it seems like you are inquiring about the liturgy of a specific day. I however simply did not understand what day you were asking about. Could you perhaps ask again?' );
