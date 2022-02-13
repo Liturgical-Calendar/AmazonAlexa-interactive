@@ -21,6 +21,15 @@ include_once( 'config.php' );
 class AlexaSkill {
     const METADATA_URL  = 'https://litcal.johnromanodorazio.com/api/v3/LitCalMetadata.php';
     const LITCAL_URL    = 'https://litcal.johnromanodorazio.com/api/v3/LitCalEngine.php';
+    const ROMAN_NUMERALS = [
+        'I'=>1,
+        'V'=>5,
+        'X'=>10,
+        'L'=>50,
+        'C'=>100,
+        'D'=>500,
+        'M'=>1000,
+    ];
 
     public APICore $APICore;
     private LitCommon $LitCommon;
@@ -36,6 +45,7 @@ class AlexaSkill {
     private IntlDateFormatter $monthDayFmt;
     private IntlDateFormatter $dowMonthDayFmt;
     private NumberFormatter $ordFmt;
+    private NumberFormatter $spelloutOrdFmt;
     //private string $Locale          = "en-US";
     private string $CanonLocale     = "en_US";
     private string $LitLocale       = LitLocale::ENGLISH;
@@ -119,10 +129,13 @@ class AlexaSkill {
         $this->monthDayFmt  = IntlDateFormatter::create($this->CanonLocale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'd MMMM' );
         $this->LitCommon    = new LitCommon( $this->LitLocale );
         $this->LitGrade     = new LitGrade( $this->LitLocale );
+        $this->ordFmt = NumberFormatter::create($this->CanonLocale, NumberFormatter::ORDINAL);
+        $this->spelloutOrdFmt = NumberFormatter::create($this->CanonLocale, NumberFormatter::SPELLOUT);
         if( $this->LitLocale === LitLocale::ENGLISH ) {
+            $this->spelloutOrdFmt->setTextAttribute(NumberFormatter::DEFAULT_RULESET, "%spellout-ordinal");
             $this->dowMonthDayFmt = IntlDateFormatter::create($this->CanonLocale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, MMMM ' );
-            $this->ordFmt = NumberFormatter::create($this->CanonLocale, NumberFormatter::ORDINAL);
         } else {
+            $this->spelloutOrdFmt->setTextAttribute(NumberFormatter::DEFAULT_RULESET, "%spellout-ordinal-feminine");
             $this->dowMonthDayFmt = IntlDateFormatter::create($this->CanonLocale, IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'UTC', IntlDateFormatter::GREGORIAN, 'EEEE, d MMMM' );
         }
     }
@@ -150,8 +163,18 @@ class AlexaSkill {
             if ( stripos( $mainText, 'Angela Merici' ) ) {
                 $spokenText = str_replace( 'Angela Merici', "<lang xml:lang=\"it-IT\">Angela Merici</lang>", $mainText );
             }
-            if( stripos($festName, 'Blessed') ) {
+            if( stripos( $mainText, 'Blessed') ) {
                 $spokenText = str_ireplace( 'Blessed', "<phoneme alphabet=\"ipa\" ph=\"ˈblesɪd\">Blessed</phoneme>", $mainText );
+            }
+        }
+        if( $this->LitLocale === LitLocale::ITALIAN ) {
+            $this->log[] = "We have detected an Italian request";
+            if( stripos( $mainText, 'Domenica' ) && preg_match('/\b([IVXLCDM]+) Domenica/', $mainText, $matches) ) {
+                $this->log[] = "We have detected a Sunday string with a Roman numeral: |{$matches[1]}|";
+                $ordinal = ucfirst( $this->spelloutOrdFmt->format( $this->RomanNumeralToArabic($matches[1]) ) );
+                $this->log[] = "The ordinal form of the roman numeral: $ordinal";
+                $spokenText = preg_replace('/\b([IVXLCDM]+) Domenica/', $ordinal . ' Domenica', $mainText );
+                $this->log[] = "spokenText is now: $spokenText";
             }
         }
         return $spokenText;
@@ -285,12 +308,30 @@ class AlexaSkill {
                             break;
                         case 'WhichLiturgyForGivenDay':
                             $this->log[] = "Received request with Intent === WhichLiturgyForGivenDay";
-                            if( property_exists( $slots->date, 'value' ) && 
-                                $slots->date->value !== '?' && 
-                                preg_match( '/^[1-9][0-9]{3}-[0-9]{2}-[0-9]{2}$/', $slots->date->value ) !== 0
+                            if(
+                                (
+                                    property_exists( $slots->date, 'value' ) &&
+                                    $slots->date->value !== '?' && 
+                                    preg_match( '/^[1-9][0-9]{3}-[0-9]{2}-[0-9]{2}$/', $slots->date->value ) !== 0
+                                )
+                                ||
+                                (
+                                    property_exists( $slots->today, 'value' )
+                                )
                             ) {
-                                $this->log[] = "WhichLiturgyForGivenDay: DAY === ". $slots->date->value;
-                                $date = DateTime::createFromFormat('Y-m-d H:i:s e', $slots->date->value . ' 00:00:00 UTC' );
+                                if(
+                                    property_exists( $slots->today, 'resolutions' ) &&
+                                    property_exists( $slots->today->resolutions, 'resolutionsPerAuthority' ) &&
+                                    property_exists( $slots->today->resolutions->resolutionsPerAuthority[0], 'values' ) &&
+                                    $slots->today->resolutions->resolutionsPerAuthority[0]->values[0]->value->id === 'today'
+                                ) {
+                                    $this->log[] = "WhichLiturgyForGivenDay: DAY === today";
+                                    $dateTimeToday = ( new DateTime( 'now' ) )->format( "Y-m-d" ) . " 00:00:00";
+                                    $date = DateTime::createFromFormat( 'Y-m-d H:i:s', $dateTimeToday, new DateTimeZone( 'UTC' ) );
+                                } else if( property_exists( $slots->date, 'value' ) ) {
+                                    $this->log[] = "WhichLiturgyForGivenDay: DAY === ". $slots->date->value;
+                                    $date = DateTime::createFromFormat('Y-m-d H:i:s e', $slots->date->value . ' 00:00:00 UTC' );
+                                }
                                 $queryArray = [];
                                 $queryArray[ "locale" ] = $this->LitLocale;
                                 $queryArray[ "nationalcalendar" ] = $this->Region;
@@ -344,6 +385,25 @@ class AlexaSkill {
             return [$bestRes->values[0]->value->id,$bestRes->values[0]->value->name];
         }
         return [$slot->value,$slot->value];
+    }
+
+    private function RomanNumeralToArabic( string $roman ) : int {
+        $current = 1;
+        $cumulative = 0;
+        $len = strlen($roman);
+        if($len === 0) {
+            return $cumulative;
+        }
+        while(--$len >= 0) {
+            $val = self::ROMAN_NUMERALS[$roman[$len]];
+            if ($val < $current) {
+                $cumulative -= $val;
+            } else {
+                $cumulative += $val;
+                $current = $val;
+            }
+        }
+        return $cumulative;
     }
 
     private function filterEventsForDate( string $timestamp ) : array {
@@ -443,7 +503,9 @@ class AlexaSkill {
                 }
                 
                 if( $festivity->grade < LitGrade::FEAST && $festivity->common != LitCommon::PROPRIO ) {
-                    $mainText = $mainText . " " . $this->LitCommon->C( $festivity->common ) . ".";
+                    $this->log[] = "Festivity grade is less than feast, and we have a common rather than the proper: {$festivity->common}";
+                    $this->log[] = "Which translates to: " . $this->LitCommon->C( $festivity->common );
+                    $mainText .= " " . $this->LitCommon->C( $festivity->common ) . ".";
                 }
             } else {
                 $mainText = sprintf(
@@ -616,15 +678,18 @@ class AlexaSkill {
                 }
 
                 if( $festivity->grade < LitGrade::FEAST && $festivity->common != LitCommon::PROPRIO ) {
-                    $mainText = $mainText . " " . $this->LitCommon->C( $festivity->common ) . ".";
+                    $this->log[] = "Festivity grade is less than feast, and we have a common rather than the proper: {$festivity->common}";
+                    $this->log[] = "Which translates to: " . $this->LitCommon->C( $festivity->common );
+                    $this->log[] = print_r($festivity, true);
+                    $mainText .= " " . $this->LitCommon->C( $festivity->common ) . ".";
                 }
             } else {
                 if( $tense === "future" ) {
-                /**translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity  */
-                $message = _( '%1$s is %2$s the day of %3$s' );
+                    /**translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity  */
+                    $message = _( '%1$s is %2$s the day of %3$s' );
                 } else {
-                /**translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity  */
-                $message = _( '%1$s was %2$s the day of %3$s' );
+                    /**translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity  */
+                    $message = _( '%1$s was %2$s the day of %3$s' );
                 }
                 $mainText = sprintf(
                     $message,
