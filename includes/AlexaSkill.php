@@ -144,6 +144,19 @@ class AlexaSkill {
         return $year;
     }
 
+    private function getSpokenText( string $mainText ) : string {
+        $spokenText = $mainText;
+        if( $this->LitLocale === LitLocale::ENGLISH ) {
+            if ( stripos( $mainText, 'Angela Merici' ) ) {
+                $spokenText = str_replace( 'Angela Merici', "<lang xml:lang=\"it-IT\">Angela Merici</lang>", $mainText );
+            }
+            if( stripos($festName, 'Blessed') ) {
+                $spokenText = str_ireplace( 'Blessed', "<phoneme alphabet=\"ipa\" ph=\"ˈblesɪd\">Blessed</phoneme>", $mainText );
+            }
+        }
+        return $spokenText;
+    }
+
     private function handleRequest() {
         $this->verifyApplicationId();
         if( property_exists( $this->requestParams, 'request' ) ) {
@@ -264,26 +277,11 @@ class AlexaSkill {
                                     $slots->festivity->value
                                 );
                             }
-
-                            if( $this->LitLocale === LitLocale::ENGLISH ) {
-                                if ( $fest === 'StAngelaMerici' ) {
-                                    $spokenText = str_replace( 'Angela Merici', "<lang xml:lang='it-IT'>Angela Merici</lang>", $mainText );
-                                }
-                                else if( stripos($festName, 'Blessed') ) {
-                                    $spokenText = str_ireplace( 'Blessed', "<phoneme alphabet='ipa' ph='ˈblesɪd'>Blessed</phoneme>", $mainText );
-                                }
-                                else {
-                                    $spokenText = $mainText;
-                                }
-                            } else {
-                                $spokenText = $mainText;
-                            }
+                            $spokenText = $this->getSpokenText( $mainText );
                             $alexaResponse = new AlexaResponse( false );
                             $alexaResponse->outputSpeech = new OutputSpeech( "SSML", $spokenText );
                             $alexaResponse->card = new Card( "Standard", $titleText, $mainText );
-        
                             $this->output->response = $alexaResponse;
-        
                             break;
                         case 'WhichLiturgyForGivenDay':
                             $this->log[] = "Received request with Intent === WhichLiturgyForGivenDay";
@@ -297,7 +295,6 @@ class AlexaSkill {
                                 $queryArray[ "locale" ] = $this->LitLocale;
                                 $queryArray[ "nationalcalendar" ] = $this->Region;
                                 $queryArray[ "year" ] = $date->format('Y');
-                                $this->log[] = "Requesting liturgical calendar for the year " . $queryArray["year"];
                                 $this->sendAPIRequest( $queryArray );
                                 $timestamp = $date->format('U');
                                 [ $titleText, $mainText ] = $this->filterEventsForDate( $timestamp );
@@ -305,13 +302,10 @@ class AlexaSkill {
                                 $titleText = _( 'Catholic Liturgy is confused.' );
                                 $mainText = _( 'I am terribly sorry, but it seems like you are inquiring about the liturgy of a specific day. I however simply did not understand what day you were asking about. Could you perhaps ask again?' );
                             }
-                            $this->log[] = $titleText;
-                            $this->log[] = $mainText;
-                            $spokenText = $mainText;
+                            $spokenText = $this->getSpokenText( $mainText );
                             $alexaResponse = new AlexaResponse( false );
                             $alexaResponse->outputSpeech = new OutputSpeech( "SSML", $spokenText );
                             $alexaResponse->card = new Card( "Standard", $titleText, $mainText );
-        
                             $this->output->response = $alexaResponse;
                             break;
                         case 'AMAZON.FallbackIntent':
@@ -699,7 +693,7 @@ class AlexaSkill {
 
     private function outputResponse() : void {
         $outputResponse = json_encode( $this->output );
-        $this->log[] = "outputResponse:\t{$outputResponse}";
+        //$this->log[] = "outputResponse:\t{$outputResponse}";
         echo $outputResponse;
     }
 
