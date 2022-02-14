@@ -161,7 +161,7 @@ class AlexaSkill {
         $spokenText = $mainText;
         if( $this->LitLocale === LitLocale::ENGLISH ) {
             if ( stripos( $mainText, 'Angela Merici' ) ) {
-                $spokenText = str_replace( 'Angela Merici', "<lang xml:lang=\"it-IT\">Angela Merici</lang>", $spokenText );
+                $spokenText = str_ireplace( 'Angela Merici', "<lang xml:lang=\"it-IT\">Angela Merici</lang>", $spokenText );
             }
             if( stripos( $mainText, 'Blessed') ) {
                 $spokenText = str_ireplace( 'Blessed', "<phoneme alphabet=\"ipa\" ph=\"ˈblesɪd\">Blessed</phoneme>", $spokenText );
