@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
+# "John R. D'Orazio" <priest@johnromanodorazio.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2022-12-08 23:17+0000\n"
-"Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
+"PO-Revision-Date: 2024-09-18 02:25+0000\n"
+"Last-Translator: \"John R. D'Orazio\" <priest@johnromanodorazio.com>\n"
 "Language-Team: German <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/de/>\n"
 "Language: de\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 5.6.1\n"
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
@@ -289,7 +290,7 @@ msgstr ""
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:26
 msgid "purple"
-msgstr ""
+msgstr "violett"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:29
@@ -516,7 +517,7 @@ msgstr ""
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:93
 msgid "Commemoration"
-msgstr ""
+msgstr "Gedächtnis"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:98
