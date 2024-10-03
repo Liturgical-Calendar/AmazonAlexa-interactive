@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
 # "John R. D'Orazio" <priest@johnromanodorazio.com>, 2024.
+# OpenAI <noreply-mt-openai@weblate.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2024-09-18 02:25+0000\n"
-"Last-Translator: \"John R. D'Orazio\" <priest@johnromanodorazio.com>\n"
+"PO-Revision-Date: 2024-10-04 09:40+0000\n"
+"Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: German <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/de/>\n"
 "Language: de\n"
@@ -21,16 +22,16 @@ msgstr ""
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
-msgstr ""
+msgstr "Hallo von der katholischen Liturgie!"
 
 #: includes/AlexaSkill.php:215
 msgid "If you'd like any information about the Liturgical year, just ask!"
-msgstr ""
+msgstr "Wenn du Informationen über das liturgische Jahr möchtest, frag einfach!"
 
 #: includes/AlexaSkill.php:240 includes/AlexaSkill.php:324
 #: includes/AlexaSkill.php:381
 msgid "Catholic Liturgy is confused."
-msgstr ""
+msgstr "Die katholische Liturgie ist verwirrt."
 
 #: includes/AlexaSkill.php:241
 msgid ""
@@ -38,10 +39,13 @@ msgid ""
 "simply did not understand what year you were asking about. Could you perhaps "
 "ask again?"
 msgstr ""
+"Es tut mir schrecklich leid, aber es scheint, als ob Sie nach einem Jahr "
+"fragen, und ich habe einfach nicht verstanden, welches Jahr Sie meinen. "
+"Könnten Sie vielleicht noch einmal fragen?"
 
 #: includes/AlexaSkill.php:245 includes/AlexaSkill.php:370
 msgid "Catholic Liturgy is desolate."
-msgstr ""
+msgstr "Die katholische Liturgie ist trostlos."
 
 #: includes/AlexaSkill.php:247
 #, php-format
@@ -50,56 +54,60 @@ msgid ""
 "don't really have much to tell you about this year. Perhaps ask about a year "
 "in the range 1970 to 9999?"
 msgstr ""
+"Es tut mir leid, aber es scheint, dass du nach dem Jahr %1$d fragst. Ich "
+"habe nicht viel über dieses Jahr zu erzählen. Vielleicht fragst du nach "
+"einem Jahr im Bereich von 1970 bis 9999?"
 
 #: includes/AlexaSkill.php:265
 #, php-format
 msgid "Date of %1$s in the year %2$d"
-msgstr ""
+msgstr "Datum von %1$s im Jahr %2$d"
 
 #: includes/AlexaSkill.php:275
 #, php-format
 msgid "%1$s falls on %2$s in the year %3$d."
-msgstr ""
+msgstr "%1$s fällt auf den %2$s im Jahr %3$d."
 
 #: includes/AlexaSkill.php:278
 #, php-format
 msgid "This year %1$s falls on %2$s."
-msgstr ""
+msgstr "Dieses Jahr fällt %1$s auf %2$s."
 
 #: includes/AlexaSkill.php:281
 #, php-format
 msgid "%1$s fell on %2$s in the year %3$d."
-msgstr ""
+msgstr "%1$s fiel am %2$s im Jahr %3$d."
 
 #: includes/AlexaSkill.php:292
 #, php-format
 msgid "The %1$s: %2$s, falls on %3$s in the year %4$d."
-msgstr ""
+msgstr "Der %1$s: %2$s, fällt auf den %3$s im Jahr %4$d."
 
 #: includes/AlexaSkill.php:295
 #, php-format
 msgid "This year, the %1$s: %2$s, falls on %3$s."
-msgstr ""
+msgstr "Dieses Jahr fällt der %1$s: %2$s, auf %3$s."
 
 #: includes/AlexaSkill.php:298
 #, php-format
 msgid "The %1$s: %2$s, fell on %3$s in the year %4$d."
-msgstr ""
+msgstr "Der %1$s: %2$s, fiel auf den %3$s im Jahr %4$d."
 
 #: includes/AlexaSkill.php:316
 #, php-format
 msgid "What happened to %1$s in %2$d"
-msgstr ""
+msgstr "Was ist mit %1$s in %2$d passiert"
 
 #: includes/AlexaSkill.php:318
 #, php-format
 msgid "Catholic Liturgy gathered the following information about %s:"
 msgstr ""
+"Die katholische Liturgie hat die folgenden Informationen über %s gesammelt:"
 
 #: includes/AlexaSkill.php:326
 #, php-format
 msgid "Sorry, I could not find any information about %s."
-msgstr ""
+msgstr "Entschuldigung, ich konnte keine Informationen über %s finden."
 
 #: includes/AlexaSkill.php:372
 #, php-format
@@ -108,6 +116,9 @@ msgid ""
 "afraid I don't really have much to tell you about this year. Perhaps ask "
 "about a year in the range 1970 to 9999?"
 msgstr ""
+"Es tut mir leid, aber es scheint, dass Sie nach dem Jahr %1$d fragen. Ich "
+"fürchte, ich habe nicht viel über dieses Jahr zu erzählen. Vielleicht fragen "
+"Sie nach einem Jahr im Bereich von 1970 bis 9999?"
 
 #: includes/AlexaSkill.php:382
 msgid ""
@@ -115,50 +126,58 @@ msgid ""
 "of a specific day. I however simply did not understand what day you were "
 "asking about. Could you perhaps ask again?"
 msgstr ""
+"Es tut mir schrecklich leid, aber es scheint, als würdest du nach der "
+"Liturgie eines bestimmten Tages fragen. Ich habe jedoch einfach nicht "
+"verstanden, um welchen Tag es sich handelt. Könntest du vielleicht noch "
+"einmal fragen?"
 
 #: includes/AlexaSkill.php:392
 msgid ""
 "I'm not sure I understand what you are asking. Did you want the Liturgy of "
 "the day?"
 msgstr ""
+"Ich bin mir nicht sicher, ob ich verstehe, was Sie fragen. Wollten Sie die "
+"Liturgie des Tages?"
 
 #: includes/AlexaSkill.php:401
 msgid ""
 "It has been a pleasure to be of service. Go in peace to love and serve the "
 "Lord!"
 msgstr ""
+"Es war mir eine Freude, Ihnen zu Diensten zu sein. Geht in Frieden, um den "
+"Herrn zu lieben und zu dienen!"
 
 #: includes/AlexaSkill.php:462
 msgid "Liturgy of the Day"
-msgstr ""
+msgstr "Tagesliturgie"
 
 #: includes/AlexaSkill.php:478
 msgid "Today is"
-msgstr ""
+msgstr "Heute ist"
 
 #. translators: 1. name of the festivity
 #: includes/AlexaSkill.php:484
 #, php-format
 msgid "This evening there will be a Vigil Mass for the %1$s."
-msgstr ""
+msgstr "Heute Abend wird es eine Vigilmesse für die %1$s geben."
 
 #: includes/AlexaSkill.php:485 includes/AlexaSkill.php:492
 #: includes/AlexaSkill.php:610 includes/AlexaSkill.php:623
 msgid "Vigil Mass"
-msgstr ""
+msgstr "Vorabendmesse"
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:490
 #, php-format
 msgid "This evening there will be a Vigil Mass for the %1$s %2$s."
-msgstr ""
+msgstr "Heute Abend wird es eine Vigilmesse für die %1$s %2$s geben."
 
 #. translators: 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #: includes/AlexaSkill.php:499 includes/AlexaSkill.php:535
 #, php-format
 msgid "Today is %1$s the %2$s of %3$s."
-msgstr ""
+msgstr "Heute ist %1$s der %2$s %3$s."
 
 #: includes/AlexaSkill.php:500 includes/AlexaSkill.php:510
 #: includes/AlexaSkill.php:518 includes/AlexaSkill.php:528
@@ -167,125 +186,125 @@ msgstr ""
 #: includes/AlexaSkill.php:674 includes/AlexaSkill.php:691
 #: includes/AlexaSkill.php:706 includes/AlexaSkill.php:735
 msgid "also"
-msgstr ""
+msgstr "auch"
 
 #. translators: CTXT: Sundays. 1. (also|''), 2. name of the festivity
 #. translators: CTXT: Saturday memorial BVM. 1. (also|''), 2. name of the festivity
 #: includes/AlexaSkill.php:509 includes/AlexaSkill.php:527
 #, php-format
 msgid "Today is %1$s the %2$s."
-msgstr ""
+msgstr "Heute ist %1$s der %2$s."
 
 #. translators: CTXT: Feast of the Lord. 1. (also|''), 2. grade of the festivity, 3. name of the festivity
 #: includes/AlexaSkill.php:517
 #, php-format
 msgid "Today is %1$s the %2$s, %3$s."
-msgstr ""
+msgstr "Heute ist %1$s der %2$s, %3$s."
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. (also|''), 2. name of the festivity
 #: includes/AlexaSkill.php:551
 #, php-format
 msgid "Today is %1$s the day of %2$s."
-msgstr ""
+msgstr "Heute ist %1$s der Tag von %2$s."
 
 #. translators: 1. date 2. festivity
 #: includes/AlexaSkill.php:581
 #, php-format
 msgid "%1$s is %2$s"
-msgstr ""
+msgstr "%1$s ist %2$s"
 
 #. translators: 1. date 2. festivity
 #: includes/AlexaSkill.php:588
 #, php-format
 msgid "%1$s was %2$s"
-msgstr ""
+msgstr "%1$s war %2$s"
 
 #: includes/AlexaSkill.php:594 includes/AlexaSkill.php:643
 #: includes/AlexaSkill.php:712 includes/AlexaSkill.php:739
 #, php-format
 msgid "in the year %1$d"
-msgstr ""
+msgstr "im Jahr %1$d"
 
 #. translators: 1. name of the festivity
 #: includes/AlexaSkill.php:603
 #, php-format
 msgid "In the evening there will be a Vigil Mass for the %1$s."
-msgstr ""
+msgstr "Am Abend wird es eine Vigilmesse für die %1$s geben."
 
 #. translators: 1. name of the festivity
 #: includes/AlexaSkill.php:606
 #, php-format
 msgid "In the evening there was a Vigil Mass for the %1$s."
-msgstr ""
+msgstr "Am Abend gab es eine Vigilmesse für die %1$s."
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:615
 #, php-format
 msgid "In the evening there will be a Vigil Mass for the %1$s %2$s."
-msgstr ""
+msgstr "Am Abend wird es eine Vigilmesse für die %1$s %2$s geben."
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:618
 #, php-format
 msgid "In the evening there was a Vigil Mass for the %1$s %2$s."
-msgstr ""
+msgstr "Am Abend gab es eine Vigilmesse für die %1$s %2$s."
 
 #. translators: 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:630 includes/AlexaSkill.php:698
 #, php-format
 msgid "%1$s is %2$s the %3$s of %4$s"
-msgstr ""
+msgstr "%1$s ist %2$s der %3$s von %4$s"
 
 #. translators: 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:633 includes/AlexaSkill.php:701
 #, php-format
 msgid "%1$s was %2$s the %3$s of %4$s"
-msgstr ""
+msgstr "%1$s war %2$s der %3$s von %4$s"
 
 #. translators: CTXT: Sundays. 1. date, 2. (also|''), 3. name of the festivity
 #. translators: CTXT: Saturday memorial BVM. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:652 includes/AlexaSkill.php:683
 #, php-format
 msgid "%1$s is %2$s the %3$s"
-msgstr ""
+msgstr "%1$s ist %2$s der %3$s"
 
 #. translators: CTXT: Sundays. 1. date, 2. (also|''), 3. name of the festivity
 #. translators: CTXT: Saturday memorial BVM. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:655 includes/AlexaSkill.php:686
 #, php-format
 msgid "%1$s was %2$s the %3$s"
-msgstr ""
+msgstr "%1$s war %2$s der %3$s"
 
 #. translators: CTXT: Feast of the Lord. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:666
 #, php-format
 msgid "%1$s is %2$s the %3$s, %4$s"
-msgstr ""
+msgstr "%1$s ist %2$s der %3$s, %4$s"
 
 #. translators: CTXT: Feast of the Lord. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:669
 #, php-format
 msgid "%1$s was %2$s the %3$s, %4$s"
-msgstr ""
+msgstr "%1$s war %2$s der %3$s, %4$s"
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:727
 #, php-format
 msgid "%1$s is %2$s the day of %3$s"
-msgstr ""
+msgstr "%1$s ist %2$s der Tag von %3$s"
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:730
 #, php-format
 msgid "%1$s was %2$s the day of %3$s"
-msgstr ""
+msgstr "%1$s war %2$s der Tag von %3$s"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:23
 msgid "green"
-msgstr ""
+msgstr "grün"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:26
@@ -295,224 +314,224 @@ msgstr "violett"
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:29
 msgid "white"
-msgstr ""
+msgstr "weiß"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:32
 msgid "red"
-msgstr ""
+msgstr "rot"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:35
 msgid "pink"
-msgstr ""
+msgstr "rosa"
 
 #: includes/enums/LitCommon.php:56
 msgid "Proper"
-msgstr ""
+msgstr "Eigen"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:58
 msgid "Dedication of a Church"
-msgstr ""
+msgstr "Kirchweihe"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:60
 msgid "Blessed Virgin Mary"
-msgstr ""
+msgstr "Selige Jungfrau Maria"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:62
 msgid "Martyrs"
-msgstr ""
+msgstr "Märtyrer"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:64
 msgid "Pastors"
-msgstr ""
+msgstr "Pfarrer"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:66
 msgid "Doctors"
-msgstr ""
+msgstr "Ärzte"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:68
 msgid "Virgins"
-msgstr ""
+msgstr "Jungfrauen"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:70
 msgid "Holy Men and Women"
-msgstr ""
+msgstr "Heilige Männer und Frauen"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:73
 msgid "For One Martyr"
-msgstr ""
+msgstr "Für einen Märtyrer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:75
 msgid "For Several Martyrs"
-msgstr ""
+msgstr "Für mehrere Märtyrer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:77
 msgid "For Missionary Martyrs"
-msgstr ""
+msgstr "Für missionarische Märtyrer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:79
 msgid "For One Missionary Martyr"
-msgstr ""
+msgstr "Für einen missionarischen Märtyrer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:81
 msgid "For Several Missionary Martyrs"
-msgstr ""
+msgstr "Für mehrere missionarische Märtyrer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:83
 msgid "For a Virgin Martyr"
-msgstr ""
+msgstr "Für eine jungfräuliche Märtyrerin"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:85
 msgid "For a Holy Woman Martyr"
-msgstr ""
+msgstr "Für eine heilige Märtyrerin"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:87
 msgid "For a Pope"
-msgstr ""
+msgstr "Für einen Papst"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:89
 msgid "For a Bishop"
-msgstr ""
+msgstr "Für einen Bischof"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:91
 msgid "For One Pastor"
-msgstr ""
+msgstr "Für einen Hirten"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:93
 msgid "For Several Pastors"
-msgstr ""
+msgstr "Für mehrere Hirten"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:95
 msgid "For Founders of a Church"
-msgstr ""
+msgstr "Für Gründer einer Kirche"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:97
 msgid "For One Founder"
-msgstr ""
+msgstr "Für einen Gründer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:99
 msgid "For Several Founders"
-msgstr ""
+msgstr "Für mehrere Gründer"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:101
 msgid "For Missionaries"
-msgstr ""
+msgstr "Für Missionare"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:103
 msgid "For One Virgin"
-msgstr ""
+msgstr "Für eine Jungfrau"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:105
 msgid "For Several Virgins"
-msgstr ""
+msgstr "Für mehrere Jungfrauen"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:107
 msgid "For Several Saints"
-msgstr ""
+msgstr "Für mehrere Heilige"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:109
 msgid "For One Saint"
-msgstr ""
+msgstr "Für einen Heiligen"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:111
 msgid "For an Abbot"
-msgstr ""
+msgstr "Für einen Abt"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:113
 msgid "For a Monk"
-msgstr ""
+msgstr "Für einen Mönch"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:115
 msgid "For a Nun"
-msgstr ""
+msgstr "Für eine Nonne"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:117
 msgid "For Religious"
-msgstr ""
+msgstr "Für Ordensleute"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:119
 msgid "For Those Who Practiced Works of Mercy"
-msgstr ""
+msgstr "Für diejenigen, die Werke der Barmherzigkeit praktizierten"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:121
 msgid "For Educators"
-msgstr ""
+msgstr "Für Erzieher"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:123
 msgid "For Holy Women"
-msgstr ""
+msgstr "Für heilige Frauen"
 
 #. translators: (singular feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:168 includes/enums/LitCommon.php:180
 msgctxt "(SING_FEMM)"
 msgid "of the"
-msgstr ""
+msgstr "der"
 
 #. translators: (plural feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:171
 msgctxt "(PLUR_FEMM)"
 msgid "of"
-msgstr ""
+msgstr "Für einen Bischof"
 
 #. translators: (plural masculine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:177
 msgctxt "(PLUR_MASC)"
 msgid "of"
-msgstr ""
+msgstr "Für einen Bischof"
 
 #. translators: (singular masculine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:183
 msgctxt "(SING_MASC)"
 msgid "of the"
-msgstr ""
+msgstr "der"
 
 #: includes/enums/LitCommon.php:268
 msgid "From the Common"
-msgstr ""
+msgstr "Aus dem Gemeinsamen"
 
 #. translators: when there are multiple possible commons, this will be the glue "or from the common of..."
 #: includes/enums/LitCommon.php:272
 msgid "or"
-msgstr ""
+msgstr "oder"
 
 #. translators: liturgical rank. Keep lowercase
 #: includes/enums/LitGrade.php:88 includes/enums/LitGrade.php:127
 msgid "weekday"
-msgstr ""
+msgstr "Wochentag"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:93
@@ -547,4 +566,4 @@ msgstr "HOCHFEST"
 #. translators: liturgical rank. Keep lowercase
 #: includes/enums/LitGrade.php:123
 msgid "celebration with precedence over solemnities"
-msgstr ""
+msgstr "Feier mit Vorrang vor Hochfesten"
