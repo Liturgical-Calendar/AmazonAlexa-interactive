@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
+# OpenAI <noreply-mt-openai@weblate.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2022-02-16 09:56+0000\n"
-"Last-Translator: John R. D'Orazio <priest@johnromanodorazio.com>\n"
+"PO-Revision-Date: 2024-10-04 09:40+0000\n"
+"Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Latin <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/la/>\n"
 "Language: la\n"
@@ -16,20 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 5.6.1\n"
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
-msgstr ""
+msgstr "Salve a Liturgia Catholica!"
 
 #: includes/AlexaSkill.php:215
 msgid "If you'd like any information about the Liturgical year, just ask!"
-msgstr ""
+msgstr "Si vis aliquam informationem de Anno Liturgico, modo roga!"
 
 #: includes/AlexaSkill.php:240 includes/AlexaSkill.php:324
 #: includes/AlexaSkill.php:381
 msgid "Catholic Liturgy is confused."
-msgstr ""
+msgstr "Liturgia Catholica confunditur."
 
 #: includes/AlexaSkill.php:241
 msgid ""
@@ -37,10 +38,12 @@ msgid ""
 "simply did not understand what year you were asking about. Could you perhaps "
 "ask again?"
 msgstr ""
+"Valde doleo, sed videtur te quaerere de anno, et non intellexi quem annum "
+"quaesiveris. Potesne iterum rogare?"
 
 #: includes/AlexaSkill.php:245 includes/AlexaSkill.php:370
 msgid "Catholic Liturgy is desolate."
-msgstr ""
+msgstr "Liturgia Catholica desolata est."
 
 #: includes/AlexaSkill.php:247
 #, php-format
@@ -49,56 +52,58 @@ msgid ""
 "don't really have much to tell you about this year. Perhaps ask about a year "
 "in the range 1970 to 9999?"
 msgstr ""
+"Valde doleo, sed videtur te quaerere de anno %1$d. Non multum habeo tibi de "
+"hoc anno dicere. Fortasse quaere de anno inter 1970 et 9999?"
 
 #: includes/AlexaSkill.php:265
 #, php-format
 msgid "Date of %1$s in the year %2$d"
-msgstr ""
+msgstr "Dies %1$s anno %2$d"
 
 #: includes/AlexaSkill.php:275
 #, php-format
 msgid "%1$s falls on %2$s in the year %3$d."
-msgstr ""
+msgstr "%1$s cadit die %2$s anno %3$d."
 
 #: includes/AlexaSkill.php:278
 #, php-format
 msgid "This year %1$s falls on %2$s."
-msgstr ""
+msgstr "Hoc anno %1$s incidit in %2$s."
 
 #: includes/AlexaSkill.php:281
 #, php-format
 msgid "%1$s fell on %2$s in the year %3$d."
-msgstr ""
+msgstr "%1$s cecidit die %2$s anno %3$d."
 
 #: includes/AlexaSkill.php:292
 #, php-format
 msgid "The %1$s: %2$s, falls on %3$s in the year %4$d."
-msgstr ""
+msgstr "%1$s: %2$s, incidit in %3$s anno %4$d."
 
 #: includes/AlexaSkill.php:295
 #, php-format
 msgid "This year, the %1$s: %2$s, falls on %3$s."
-msgstr ""
+msgstr "Hoc anno, %1$s: %2$s, cadit die %3$s."
 
 #: includes/AlexaSkill.php:298
 #, php-format
 msgid "The %1$s: %2$s, fell on %3$s in the year %4$d."
-msgstr ""
+msgstr "%1$s: %2$s, cecidit die %3$s anno %4$d."
 
 #: includes/AlexaSkill.php:316
 #, php-format
 msgid "What happened to %1$s in %2$d"
-msgstr ""
+msgstr "Quid accidit %1$s in %2$d"
 
 #: includes/AlexaSkill.php:318
 #, php-format
 msgid "Catholic Liturgy gathered the following information about %s:"
-msgstr ""
+msgstr "Liturgia Catholica sequentem informationem de %s collegit:"
 
 #: includes/AlexaSkill.php:326
 #, php-format
 msgid "Sorry, I could not find any information about %s."
-msgstr ""
+msgstr "Doleo, non potui invenire informationem de %s."
 
 #: includes/AlexaSkill.php:372
 #, php-format
@@ -107,6 +112,8 @@ msgid ""
 "afraid I don't really have much to tell you about this year. Perhaps ask "
 "about a year in the range 1970 to 9999?"
 msgstr ""
+"Valde doleo, sed videtur te quaerere de anno %1$d. Vereor ne multum habeam "
+"tibi de hoc anno dicere. Fortasse quaere de anno inter 1970 et 9999?"
 
 #: includes/AlexaSkill.php:382
 msgid ""
@@ -114,18 +121,20 @@ msgid ""
 "of a specific day. I however simply did not understand what day you were "
 "asking about. Could you perhaps ask again?"
 msgstr ""
+"Valde doleo, sed videtur te quaerere de liturgia diei specifici. Tamen non "
+"intellexi quem diem quaesiveris. Potesne iterum rogare?"
 
 #: includes/AlexaSkill.php:392
 msgid ""
 "I'm not sure I understand what you are asking. Did you want the Liturgy of "
 "the day?"
-msgstr ""
+msgstr "Non certus sum quid quaeras. Visne Liturgiam diei?"
 
 #: includes/AlexaSkill.php:401
 msgid ""
 "It has been a pleasure to be of service. Go in peace to love and serve the "
 "Lord!"
-msgstr ""
+msgstr "Placuit mihi servire. Ite in pace ad amandum et serviendum Domino!"
 
 #: includes/AlexaSkill.php:462
 msgid "Liturgy of the Day"
@@ -191,95 +200,95 @@ msgstr "Hodie est %1$s dies %2$s."
 #: includes/AlexaSkill.php:581
 #, php-format
 msgid "%1$s is %2$s"
-msgstr ""
+msgstr "%1$s est %2$s"
 
 #. translators: 1. date 2. festivity
 #: includes/AlexaSkill.php:588
 #, php-format
 msgid "%1$s was %2$s"
-msgstr ""
+msgstr "%1$s erat %2$s"
 
 #: includes/AlexaSkill.php:594 includes/AlexaSkill.php:643
 #: includes/AlexaSkill.php:712 includes/AlexaSkill.php:739
 #, php-format
 msgid "in the year %1$d"
-msgstr ""
+msgstr "anno %1$d"
 
 #. translators: 1. name of the festivity
 #: includes/AlexaSkill.php:603
 #, php-format
 msgid "In the evening there will be a Vigil Mass for the %1$s."
-msgstr ""
+msgstr "Vespere erit Missa Vigiliae pro %1$s."
 
 #. translators: 1. name of the festivity
 #: includes/AlexaSkill.php:606
 #, php-format
 msgid "In the evening there was a Vigil Mass for the %1$s."
-msgstr ""
+msgstr "Vespere erat Missa Vigiliae pro %1$s."
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:615
 #, php-format
 msgid "In the evening there will be a Vigil Mass for the %1$s %2$s."
-msgstr ""
+msgstr "Vespere erit Missa Vigiliae pro %1$s %2$s."
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:618
 #, php-format
 msgid "In the evening there was a Vigil Mass for the %1$s %2$s."
-msgstr ""
+msgstr "Vespere erat Missa Vigiliae pro %1$s %2$s."
 
 #. translators: 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:630 includes/AlexaSkill.php:698
 #, php-format
 msgid "%1$s is %2$s the %3$s of %4$s"
-msgstr ""
+msgstr "%1$s est %2$s die %3$s de %4$s"
 
 #. translators: 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #. translators: CTXT: (optional) memorial or feast. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:633 includes/AlexaSkill.php:701
 #, php-format
 msgid "%1$s was %2$s the %3$s of %4$s"
-msgstr ""
+msgstr "%1$s erat %2$s %3$s de %4$s"
 
 #. translators: CTXT: Sundays. 1. date, 2. (also|''), 3. name of the festivity
 #. translators: CTXT: Saturday memorial BVM. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:652 includes/AlexaSkill.php:683
 #, php-format
 msgid "%1$s is %2$s the %3$s"
-msgstr ""
+msgstr "%1$s est %2$s %3$s"
 
 #. translators: CTXT: Sundays. 1. date, 2. (also|''), 3. name of the festivity
 #. translators: CTXT: Saturday memorial BVM. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:655 includes/AlexaSkill.php:686
 #, php-format
 msgid "%1$s was %2$s the %3$s"
-msgstr ""
+msgstr "%1$s erat %2$s die %3$s"
 
 #. translators: CTXT: Feast of the Lord. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:666
 #, php-format
 msgid "%1$s is %2$s the %3$s, %4$s"
-msgstr ""
+msgstr "%1$s est %2$s %3$s, %4$s"
 
 #. translators: CTXT: Feast of the Lord. 1. date, 2. (also|''), 3. grade of the festivity, 4. name of the festivity
 #: includes/AlexaSkill.php:669
 #, php-format
 msgid "%1$s was %2$s the %3$s, %4$s"
-msgstr ""
+msgstr "%1$s erat %2$s die %3$s, %4$s"
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:727
 #, php-format
 msgid "%1$s is %2$s the day of %3$s"
-msgstr ""
+msgstr "%1$s est %2$s dies %3$s"
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:730
 #, php-format
 msgid "%1$s was %2$s the day of %3$s"
-msgstr ""
+msgstr "%1$s erat %2$s dies %3$s"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:23
@@ -479,25 +488,25 @@ msgstr "Pro sanctis mulieribus"
 #: includes/enums/LitCommon.php:168 includes/enums/LitCommon.php:180
 msgctxt "(SING_FEMM)"
 msgid "of the"
-msgstr ""
+msgstr "de"
 
 #. translators: (plural feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:171
 msgctxt "(PLUR_FEMM)"
 msgid "of"
-msgstr ""
+msgstr "de"
 
 #. translators: (plural masculine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:177
 msgctxt "(PLUR_MASC)"
 msgid "of"
-msgstr ""
+msgstr "de"
 
 #. translators: (singular masculine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:183
 msgctxt "(SING_MASC)"
 msgid "of the"
-msgstr ""
+msgstr "de"
 
 #: includes/enums/LitCommon.php:268
 msgid "From the Common"
