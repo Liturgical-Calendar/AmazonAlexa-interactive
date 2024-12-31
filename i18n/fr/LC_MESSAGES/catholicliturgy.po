@@ -4,15 +4,15 @@
 # John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
 # Weblate Admin <admin@example.com>, 2024.
 # OpenAI <noreply-mt-openai@weblate.org>, 2024.
-# "John R. D'Orazio" <priest@johnromanodorazio.com>, 2024.
+# "John R. D'Orazio" <priest@johnromanodorazio.com>, 2024, 2025.
 # chrissherren <sherrenchris@icloud.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2024-12-02 15:05+0000\n"
-"Last-Translator: chrissherren <sherrenchris@icloud.com>\n"
+"PO-Revision-Date: 2025-01-01 16:05+0000\n"
+"Last-Translator: \"John R. D'Orazio\" <priest@johnromanodorazio.com>\n"
 "Language-Team: French <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/fr/>\n"
 "Language: fr\n"
@@ -408,7 +408,7 @@ msgstr "Pour un Pape"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:89
 msgid "For a Bishop"
-msgstr "Pour un évêque"
+msgstr "Pour un Évêque"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:91
