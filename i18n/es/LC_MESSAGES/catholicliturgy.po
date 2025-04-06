@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
 # OpenAI <noreply-mt-openai@weblate.org>, 2024.
+# Miguel Galvez <miggalvez@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2024-10-04 09:40+0000\n"
-"Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
+"PO-Revision-Date: 2025-04-11 06:02+0000\n"
+"Last-Translator: Miguel Galvez <miggalvez@gmail.com>\n"
 "Language-Team: Spanish <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/es/>\n"
 "Language: es\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.1\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
@@ -94,7 +95,7 @@ msgstr "El %1$s: %2$s, cayó el %3$s en el año %4$d."
 #: includes/AlexaSkill.php:316
 #, php-format
 msgid "What happened to %1$s in %2$d"
-msgstr "¿Qué pasó con %1$s en %2$d?"
+msgstr "¿Qué pasó con %1$s en %2$d"
 
 #: includes/AlexaSkill.php:318
 #, php-format
@@ -158,7 +159,7 @@ msgstr "Esta noche habrá una Misa de Vigilia para el %1$s."
 #: includes/AlexaSkill.php:485 includes/AlexaSkill.php:492
 #: includes/AlexaSkill.php:610 includes/AlexaSkill.php:623
 msgid "Vigil Mass"
-msgstr "Misa de Vigilia"
+msgstr "Misa de la Víspera"
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:490
@@ -362,7 +363,7 @@ msgstr "Santos y Santas"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:73
 msgid "For One Martyr"
-msgstr "Para Un Mártir"
+msgstr "Por un mártir"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:75
@@ -372,7 +373,7 @@ msgstr "Para varios mártires"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:77
 msgid "For Missionary Martyrs"
-msgstr "Para mártires misioneros"
+msgstr "Por Misioneros Mártires"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:79
@@ -382,17 +383,17 @@ msgstr "Por un Misionero Mártir"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:81
 msgid "For Several Missionary Martyrs"
-msgstr "Para varios mártires misioneros"
+msgstr "Por Varios Misioneros Mártires"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:83
 msgid "For a Virgin Martyr"
-msgstr "Para una Virgen Mártir"
+msgstr "Por una Virgen Mártir"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:85
 msgid "For a Holy Woman Martyr"
-msgstr "Para una santa mártir"
+msgstr "Por una Santa Mártir"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:87
@@ -402,7 +403,7 @@ msgstr "Por un Papa"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:89
 msgid "For a Bishop"
-msgstr "Para un obispo"
+msgstr "Por un Obispo"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:91
@@ -422,12 +423,12 @@ msgstr "Por Fundadores de una Iglesia"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:97
 msgid "For One Founder"
-msgstr "Para un fundador"
+msgstr "Por un Fundador"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:99
 msgid "For Several Founders"
-msgstr "Para varios fundadores"
+msgstr "Por Varios Fundadores"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:101
@@ -437,27 +438,27 @@ msgstr "Para misioneros"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:103
 msgid "For One Virgin"
-msgstr "Para Una Virgen"
+msgstr "Por una Virgen"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:105
 msgid "For Several Virgins"
-msgstr "Para Varias Vírgenes"
+msgstr "Por Varias Vírgenes"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:107
 msgid "For Several Saints"
-msgstr "Para varios santos"
+msgstr "Por Varios Santos"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:109
 msgid "For One Saint"
-msgstr "Para Un Santo"
+msgstr "Por un Santo"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:111
 msgid "For an Abbot"
-msgstr "Para un Abad"
+msgstr "Por un Abad"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:113
@@ -482,12 +483,12 @@ msgstr "Para quienes practicaron obras de misericordia"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:121
 msgid "For Educators"
-msgstr "Para educadores"
+msgstr "Por Educadores"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:123
 msgid "For Holy Women"
-msgstr "Para Santas Mujeres"
+msgstr "Por Mujeres Santas"
 
 #. translators: (singular feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:168 includes/enums/LitCommon.php:180
