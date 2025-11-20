@@ -4,13 +4,14 @@
 # John R. D'Orazio <priest@johnromanodorazio.com>, 2022.
 # OpenAI <noreply-mt-openai@weblate.org>, 2024.
 # Miguel Galvez <miggalvez@gmail.com>, 2025.
+# "John R. D'Orazio" <priest@johnromanodorazio.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2025-04-11 06:02+0000\n"
-"Last-Translator: Miguel Galvez <miggalvez@gmail.com>\n"
+"PO-Revision-Date: 2025-11-21 17:22+0000\n"
+"Last-Translator: \"John R. D'Orazio\" <priest@johnromanodorazio.com>\n"
 "Language-Team: Spanish <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/es/>\n"
 "Language: es\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
@@ -536,7 +537,7 @@ msgstr "Conmemoración"
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:98
 msgid "Optional memorial"
-msgstr "Memoria facultativa"
+msgstr "Memoria opcional"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:103
