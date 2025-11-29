@@ -126,8 +126,8 @@ msgid ""
 "asking about. Could you perhaps ask again?"
 msgstr ""
 "Lo siento mucho, pero parece que estás preguntando sobre la liturgia de un "
-"día específico. Sin embargo, no entendí de qué día estabas hablando. ¿"
-"Podrías preguntar de nuevo?"
+"día específico. Sin embargo, no entendí de qué día estabas hablando. "
+"¿Podrías preguntar de nuevo?"
 
 #: includes/AlexaSkill.php:392
 msgid ""

@@ -27,7 +27,8 @@ msgstr "Hallo von der katholischen Liturgie!"
 
 #: includes/AlexaSkill.php:215
 msgid "If you'd like any information about the Liturgical year, just ask!"
-msgstr "Wenn du Informationen über das liturgische Jahr möchtest, frag einfach!"
+msgstr ""
+"Wenn du Informationen über das liturgische Jahr möchtest, frag einfach!"
 
 #: includes/AlexaSkill.php:240 includes/AlexaSkill.php:324
 #: includes/AlexaSkill.php:381
