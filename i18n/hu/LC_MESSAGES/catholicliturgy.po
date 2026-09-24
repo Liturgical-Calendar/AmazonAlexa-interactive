@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Gábor <pleineux@gmail.com>, 2025.
 # "John R. D'Orazio" <priest@johnromanodorazio.com>, 2025.
+# OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2025-12-02 13:22+0000\n"
-"Last-Translator: \"John R. D'Orazio\" <priest@johnromanodorazio.com>\n"
+"PO-Revision-Date: 2026-09-25 11:55+0000\n"
+"Last-Translator: OpenAI <noreply-mt-openai@weblate.org>\n"
 "Language-Team: Hungarian <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/hu/>\n"
 "Language: hu\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.3\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
@@ -130,7 +131,7 @@ msgstr ""
 
 #: includes/AlexaSkill.php:462
 msgid "Liturgy of the Day"
-msgstr ""
+msgstr "Napi liturgia"
 
 #: includes/AlexaSkill.php:478
 msgid "Today is"
@@ -145,7 +146,7 @@ msgstr ""
 #: includes/AlexaSkill.php:485 includes/AlexaSkill.php:492
 #: includes/AlexaSkill.php:610 includes/AlexaSkill.php:623
 msgid "Vigil Mass"
-msgstr ""
+msgstr "Vigília mise"
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:490
@@ -268,19 +269,19 @@ msgstr ""
 #: includes/AlexaSkill.php:669
 #, php-format
 msgid "%1$s was %2$s the %3$s, %4$s"
-msgstr ""
+msgstr "%1$s volt %2$s a %3$s, %4$s"
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:727
 #, php-format
 msgid "%1$s is %2$s the day of %3$s"
-msgstr ""
+msgstr "%1$s van %2$s a napja %3$s"
 
 #. translators: CTXT: higher grade solemnity with precedence over other solemnities. 1. date, 2. (also|''), 3. name of the festivity
 #: includes/AlexaSkill.php:730
 #, php-format
 msgid "%1$s was %2$s the day of %3$s"
-msgstr ""
+msgstr "%1$s volt %2$s a napja %3$s"
 
 #. translators: context = liturgical color
 #: includes/enums/LitColor.php:23
@@ -314,237 +315,237 @@ msgstr "Proprium"
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:58
 msgid "Dedication of a Church"
-msgstr ""
+msgstr "A templom felszentelése"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:60
 msgid "Blessed Virgin Mary"
-msgstr ""
+msgstr "Boldogságos Szűz Mária"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:62
 msgid "Martyrs"
-msgstr ""
+msgstr "Mártírok"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:64
 msgid "Pastors"
-msgstr ""
+msgstr "Pásztorok"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:66
 msgid "Doctors"
-msgstr ""
+msgstr "Orvosok"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:68
 msgid "Virgins"
-msgstr ""
+msgstr "Szűzek"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:70
 msgid "Holy Men and Women"
-msgstr ""
+msgstr "Szent férfiak és nők"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:73
 msgid "For One Martyr"
-msgstr ""
+msgstr "Egy mártírért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:75
 msgid "For Several Martyrs"
-msgstr ""
+msgstr "Több mártírért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:77
 msgid "For Missionary Martyrs"
-msgstr ""
+msgstr "Misszionárius mártírok"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:79
 msgid "For One Missionary Martyr"
-msgstr ""
+msgstr "Egy misszionárius mártírért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:81
 msgid "For Several Missionary Martyrs"
-msgstr ""
+msgstr "Néhány misszionárius mártírok"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:83
 msgid "For a Virgin Martyr"
-msgstr ""
+msgstr "Egy szűz mártírért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:85
 msgid "For a Holy Woman Martyr"
-msgstr ""
+msgstr "Egy szent női mártírért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:87
 msgid "For a Pope"
-msgstr ""
+msgstr "Egy pápa érdekében"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:89
 msgid "For a Bishop"
-msgstr ""
+msgstr "Egy püspökért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:91
 msgid "For One Pastor"
-msgstr ""
+msgstr "Egy lelkipásztorért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:93
 msgid "For Several Pastors"
-msgstr ""
+msgstr "Néhány lelkipásztorért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:95
 msgid "For Founders of a Church"
-msgstr ""
+msgstr "Egyház alapítóiért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:97
 msgid "For One Founder"
-msgstr ""
+msgstr "Egy alapítóért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:99
 msgid "For Several Founders"
-msgstr ""
+msgstr "Több alapítóért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:101
 msgid "For Missionaries"
-msgstr ""
+msgstr "Misszionáriusokért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:103
 msgid "For One Virgin"
-msgstr ""
+msgstr "Egy szűzért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:105
 msgid "For Several Virgins"
-msgstr ""
+msgstr "Több szűzért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:107
 msgid "For Several Saints"
-msgstr ""
+msgstr "Több szentért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:109
 msgid "For One Saint"
-msgstr ""
+msgstr "Egy szentért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:111
 msgid "For an Abbot"
-msgstr ""
+msgstr "Egy apátért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:113
 msgid "For a Monk"
-msgstr ""
+msgstr "Egy szerzetesért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:115
 msgid "For a Nun"
-msgstr ""
+msgstr "Egy apácaért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:117
 msgid "For Religious"
-msgstr ""
+msgstr "Vallásosokért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:119
 msgid "For Those Who Practiced Works of Mercy"
-msgstr ""
+msgstr "Azokért, akik az irgalmasság cselekedeteit gyakorolták"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:121
 msgid "For Educators"
-msgstr ""
+msgstr "Pedagógusokért"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:123
 msgid "For Holy Women"
-msgstr ""
+msgstr "Szent Asszonyokért"
 
 #. translators: (singular feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:168 includes/enums/LitCommon.php:180
 msgctxt "(SING_FEMM)"
 msgid "of the"
-msgstr ""
+msgstr "a"
 
 #. translators: (plural feminine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:171
 msgctxt "(PLUR_FEMM)"
 msgid "of"
-msgstr ""
+msgstr "Asszonyoké"
 
 #. translators: (plural masculine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:177
 msgctxt "(PLUR_MASC)"
 msgid "of"
-msgstr ""
+msgstr "a"
 
 #. translators: (singular masculine) glue between "From the Common" and the actual common. Latin: leave empty!
 #: includes/enums/LitCommon.php:183
 msgctxt "(SING_MASC)"
 msgid "of the"
-msgstr ""
+msgstr "a"
 
 #: includes/enums/LitCommon.php:268
 msgid "From the Common"
-msgstr ""
+msgstr "A Közösből"
 
 #. translators: when there are multiple possible commons, this will be the glue "or from the common of..."
 #: includes/enums/LitCommon.php:272
 msgid "or"
-msgstr ""
+msgstr "vagy"
 
 #. translators: liturgical rank. Keep lowercase
 #: includes/enums/LitGrade.php:88 includes/enums/LitGrade.php:127
 msgid "weekday"
-msgstr ""
+msgstr "hétköznap"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:93
 msgid "Commemoration"
-msgstr ""
+msgstr "Emlékezés"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:98
 msgid "Optional memorial"
-msgstr ""
+msgstr "Válásztható emléknap"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:103
 msgid "Memorial"
-msgstr ""
+msgstr "Emléknap"
 
 #. translators: liturgical rank. Keep UPPERCASE
 #: includes/enums/LitGrade.php:108
 msgid "FEAST"
-msgstr ""
+msgstr "ÜNNEP"
 
 #. translators: liturgical rank. Keep UPPERCASE
 #: includes/enums/LitGrade.php:113
 msgid "FEAST OF THE LORD"
-msgstr ""
+msgstr "AZ ÚR ÜNNEPE"
 
 #. translators: liturgical rank. Keep UPPERCASE
 #: includes/enums/LitGrade.php:118
 msgid "SOLEMNITY"
-msgstr ""
+msgstr "FŐÜNNEP"
 
 #. translators: liturgical rank. Keep lowercase
 #: includes/enums/LitGrade.php:123
 msgid "celebration with precedence over solemnities"
-msgstr ""
+msgstr "A főünnepeknél elsőbbséget élvező ünneplés"
