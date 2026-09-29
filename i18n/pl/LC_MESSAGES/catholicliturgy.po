@@ -2,13 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Jarek Niewiadomski <jarekn2008@gmail.com>, 2025.
+# "John R. D'Orazio" <priest@johnromanodorazio.com>, 2025, 2026.
+# OpenAI <noreply-mt-openai@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-13 15:40+0000\n"
-"PO-Revision-Date: 2025-04-25 20:30+0000\n"
-"Last-Translator: Jarek Niewiadomski <jarekn2008@gmail.com>\n"
+"PO-Revision-Date: 2026-09-29 13:55+0000\n"
+"Last-Translator: \"John R. D'Orazio\" <priest@johnromanodorazio.com>\n"
 "Language-Team: Polish <https://translate.johnromanodorazio.com/projects/"
 "liturgical-calendar/alexa-interactive/pl/>\n"
 "Language: pl\n"
@@ -17,20 +19,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.11\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: includes/AlexaSkill.php:214
 msgid "Hello from Catholic Liturgy!"
-msgstr ""
+msgstr "Witaj z liturgii katolickiej!"
 
 #: includes/AlexaSkill.php:215
 msgid "If you'd like any information about the Liturgical year, just ask!"
 msgstr ""
+"Jeśli chcesz uzyskać jakiekolwiek informacje o roku liturgicznym, po prostu "
+"zapytaj!"
 
 #: includes/AlexaSkill.php:240 includes/AlexaSkill.php:324
 #: includes/AlexaSkill.php:381
 msgid "Catholic Liturgy is confused."
-msgstr ""
+msgstr "Katolicka liturgia jest zdezorientowana."
 
 #: includes/AlexaSkill.php:241
 msgid ""
@@ -38,10 +42,12 @@ msgid ""
 "simply did not understand what year you were asking about. Could you perhaps "
 "ask again?"
 msgstr ""
+"Bardzo przepraszam, ale wydaje się, że pytasz o rok i po prostu nie "
+"zrozumiałem, o który rok chodzi. Czy mógłbyś zapytać ponownie?"
 
 #: includes/AlexaSkill.php:245 includes/AlexaSkill.php:370
 msgid "Catholic Liturgy is desolate."
-msgstr ""
+msgstr "Katolicka liturgia jest opustoszała."
 
 #: includes/AlexaSkill.php:247
 #, php-format
@@ -50,56 +56,58 @@ msgid ""
 "don't really have much to tell you about this year. Perhaps ask about a year "
 "in the range 1970 to 9999?"
 msgstr ""
+"Bardzo mi przykro, ale wydaje się, że pytasz o rok %1$d. Nie mam zbyt wiele "
+"do powiedzenia na temat tego roku. Może zapytasz o rok z zakresu 1970–9999?"
 
 #: includes/AlexaSkill.php:265
 #, php-format
 msgid "Date of %1$s in the year %2$d"
-msgstr ""
+msgstr "Data %1$s w roku %2$d"
 
 #: includes/AlexaSkill.php:275
 #, php-format
 msgid "%1$s falls on %2$s in the year %3$d."
-msgstr ""
+msgstr "%1$s przypada na %2$s w roku %3$d."
 
 #: includes/AlexaSkill.php:278
 #, php-format
 msgid "This year %1$s falls on %2$s."
-msgstr ""
+msgstr "W tym roku %1$s przypada na %2$s."
 
 #: includes/AlexaSkill.php:281
 #, php-format
 msgid "%1$s fell on %2$s in the year %3$d."
-msgstr ""
+msgstr "%1$s przypadł na %2$s w roku %3$d."
 
 #: includes/AlexaSkill.php:292
 #, php-format
 msgid "The %1$s: %2$s, falls on %3$s in the year %4$d."
-msgstr ""
+msgstr "Ta %1$s: %2$s, przypada na %3$s w roku %4$d."
 
 #: includes/AlexaSkill.php:295
 #, php-format
 msgid "This year, the %1$s: %2$s, falls on %3$s."
-msgstr ""
+msgstr "W tym roku, %1$s: %2$s, wypada na %3$s."
 
 #: includes/AlexaSkill.php:298
 #, php-format
 msgid "The %1$s: %2$s, fell on %3$s in the year %4$d."
-msgstr ""
+msgstr "Ta %1$s: %2$s, przypadł na %3$s w roku %4$d."
 
 #: includes/AlexaSkill.php:316
 #, php-format
 msgid "What happened to %1$s in %2$d"
-msgstr ""
+msgstr "Co stało się z %1$s w roku %2$d?"
 
 #: includes/AlexaSkill.php:318
 #, php-format
 msgid "Catholic Liturgy gathered the following information about %s:"
-msgstr ""
+msgstr "Katolicka liturgia zebrała następujące informacje o %s:"
 
 #: includes/AlexaSkill.php:326
 #, php-format
 msgid "Sorry, I could not find any information about %s."
-msgstr ""
+msgstr "Przepraszam, nie mogłem znaleźć żadnych informacji o %s."
 
 #: includes/AlexaSkill.php:372
 #, php-format
@@ -108,6 +116,9 @@ msgid ""
 "afraid I don't really have much to tell you about this year. Perhaps ask "
 "about a year in the range 1970 to 9999?"
 msgstr ""
+"Bardzo mi przykro, ale wydaje się, że pytasz o rok %1$d. Obawiam się, że nie "
+"mam zbyt wiele do powiedzenia na temat tego roku. Może zapytasz o rok z "
+"zakresu 1970–9999?"
 
 #: includes/AlexaSkill.php:382
 msgid ""
@@ -115,18 +126,23 @@ msgid ""
 "of a specific day. I however simply did not understand what day you were "
 "asking about. Could you perhaps ask again?"
 msgstr ""
+"Bardzo mi przykro, ale wydaje się, że pytasz o liturgię konkretnego dnia. "
+"Jednak nie zrozumiałem, o jaki dzień chodzi. Czy mógłbyś zapytać ponownie?"
 
 #: includes/AlexaSkill.php:392
 msgid ""
 "I'm not sure I understand what you are asking. Did you want the Liturgy of "
 "the day?"
 msgstr ""
+"Nie jestem pewien, czy rozumiem, o co pytasz. Czy chodziło ci o liturgię "
+"dnia?"
 
 #: includes/AlexaSkill.php:401
 msgid ""
 "It has been a pleasure to be of service. Go in peace to love and serve the "
 "Lord!"
 msgstr ""
+"To była przyjemność móc służyć. Idźcie w pokoju, kochajcie i służcie Panu!"
 
 #: includes/AlexaSkill.php:462
 msgid "Liturgy of the Day"
@@ -145,7 +161,7 @@ msgstr "Dziś wieczorem odbędzie się msza czuwania w intencji %1$s."
 #: includes/AlexaSkill.php:485 includes/AlexaSkill.php:492
 #: includes/AlexaSkill.php:610 includes/AlexaSkill.php:623
 msgid "Vigil Mass"
-msgstr "Msza czuwania"
+msgstr "Msza wigilijna"
 
 #. translators: 1. grade of the festivity, 2. name of the festivity
 #: includes/AlexaSkill.php:490
@@ -329,7 +345,7 @@ msgstr "Męczennicy"
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:64
 msgid "Pastors"
-msgstr "Pastorzy"
+msgstr "Pasterze"
 
 #. translators: context = from the Common of nn
 #: includes/enums/LitCommon.php:66
@@ -399,7 +415,7 @@ msgstr "Dla jednego pastora"
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:93
 msgid "For Several Pastors"
-msgstr "Dla kilku pastorów"
+msgstr "Dla kilku pasterzy"
 
 #. translators: context = from the Common of nn: nn
 #: includes/enums/LitCommon.php:95
@@ -522,12 +538,12 @@ msgstr "Obchody"
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:98
 msgid "Optional memorial"
-msgstr "Opcjonalne upamiętnienie"
+msgstr "Wspomnienie dowolne"
 
 #. translators: liturgical rank. Keep Capitalized
 #: includes/enums/LitGrade.php:103
 msgid "Memorial"
-msgstr "Upamiętnienie"
+msgstr "Wspomnienie"
 
 #. translators: liturgical rank. Keep UPPERCASE
 #: includes/enums/LitGrade.php:108
@@ -542,7 +558,7 @@ msgstr "ŚWIĘTO PAŃSKIE"
 #. translators: liturgical rank. Keep UPPERCASE
 #: includes/enums/LitGrade.php:118
 msgid "SOLEMNITY"
-msgstr "NAMASZCZENE"
+msgstr "UROCZYSTOŚĆ"
 
 #. translators: liturgical rank. Keep lowercase
 #: includes/enums/LitGrade.php:123
